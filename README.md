@@ -6,7 +6,7 @@ An application that lets a user create, modify, and save teams for pick up games
 
 ## App MockUp
 
-<!-- Created using Adobe XD, click [here](https://xd.adobe.com/view/c7b96b0d-0230-4bb8-5d68-4edb348a0872-b188/) to view -->
+Created using Adobe XD, click [here](https://xd.adobe.com/view/68f3432b-e504-4298-4c45-27948ee2e0a8-1ec2/) to view
 
 ## Getting Started
 
