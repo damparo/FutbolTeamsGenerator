@@ -26,6 +26,15 @@ app.get("/home", function(req, res) {
     res.render("welcome");
   });
 
+app.get("/roster", function(req, res) {
+    res.render("roster");
+  });
+
+app.get("/score", function(req, res) {
+    res.render("score");
+  });
+
+
 // Start our server so that it can begin listening to client requests.
 app.listen(PORT, function() {
   // Log (server-side) when our server has started

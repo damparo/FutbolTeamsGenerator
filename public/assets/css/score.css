@@ -1,0 +1,77 @@
+body {
+
+  background: white;
+}
+
+.navbar {
+  background-color: black;
+  border-bottom: 3px solid #f0ad4e;
+}
+
+.container {
+  cursor: default;
+  background-color: white;
+  margin-top: 18vh;
+}
+
+.space {
+  margin-left: 1.5vw;
+  margin-right: 1.5vw;
+}
+.select {
+  height: 80px;
+
+}
+.col-2 {
+
+  text-align: center;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.col-5 {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.digits,
+.teams {
+ 
+  align-content: center;
+  text-align: center;
+  border-top: 3px solid black;
+  border-left: 3px solid black;
+  border-right: 3px solid black;
+
+}
+
+.digits {
+  background-color: black;
+}
+h3 {
+  padding: 10px;
+}
+.font {
+  font-family: "Graduate", cursive;
+  font-size: 100px;
+  color: #f0ad4e;
+}
+.rightborder {
+  border-right: 3px solid white;
+}
+.rightborderteam {
+  border-right: 3px solid black;
+}
+input[type="radio"] {
+  -ms-transform: scale(1.8); /* IE 9 */
+  -webkit-transform: scale(1.8); /* Chrome, Safari, Opera */
+  transform: scale(1.8);
+}
+
+.btn-group-vertical {
+  margin-top: 20px;
+}
+
+.clear {
+  margin-top: 50px;
+ 
+}

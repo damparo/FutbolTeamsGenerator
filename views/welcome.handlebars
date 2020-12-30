@@ -1,63 +1,31 @@
-<nav class="navbar fixed-top navbar-expand-lg navbar-dark navbar-custom">
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-toggle="collapse"
-      data-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
+<div class="container instructions d-flex flex-column justify-content-center align-items-center">
+  <h1 id="maintitle">The Kickball Summer Classic</h1>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto">
-        <a class="navbar-brand" href="index.html">Roster</a>
-        <a class="navbar-brand" href="scoreboard.html">Score</a>
-        <a class="navbar-brand" href="welcome.html">Home</a>
+  <h3 class="text-black manager">Welcome Kickball Manager,</h3>
+  <p class="text-black" style="text-align: center">
+    Here to help you set up and organize your teams.
+  </p>
+
+  <p>
+    <button class="btn tips" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false"
+      aria-controls="collapseExample">
+      How it Works
+    </button>
+  </p>
+  <div class="collapse" id="collapseExample">
+    <div class="card card-body">
+      <ul class="text-black">
+        <li>Add players to player pool</li>
+        <br />
+        <li>Generate teams (players randomly sorted)</li>
+        <br />
+        <li>Keep track of the score</li>
       </ul>
     </div>
-  </nav>
-
-  <div
-    class="container instructions d-flex flex-column justify-content-center align-items-center"
-  >
-    <h1 id="maintitle">The Kickball Summer Classic</h1>
-
-    <h3 class="text-black manager">Welcome Kickball Manager,</h3>
-    <p class="text-black" style="text-align: center">
-      Here to help you set up and organize your teams.
-    </p>
-
-    <p>
-      <button
-        class="btn tips"
-        type="button"
-        data-toggle="collapse"
-        data-target="#collapseExample"
-        aria-expanded="false"
-        aria-controls="collapseExample"
-      >
-        How it Works
-      </button>
-    </p>
-    <div class="collapse" id="collapseExample">
-      <div class="card card-body">
-        <ul class="text-black">
-          <li>Add players to player pool</li>
-          <br />
-          <li>Generate teams (players randomly sorted)</li>
-          <br />
-          <li>Keep track of the score</li>
-        </ul>
-      </div>
-    </div>
-
-    <h5 class="text-black begin">Lets get started,</h5>
-    <a href="index.html"
-      ><button type="button" class="btn btn-success start">
-        Add Players
-      </button></a
-    >
   </div>
+
+  <h5 class="text-black begin">Lets get started,</h5>
+  <a href="index.html"><button type="button" class="btn btn-success start">
+      Add Players
+    </button></a>
+</div>
