@@ -23,7 +23,7 @@ app.set("view engine", "handlebars");
 
 // app.use(routes);
 app.get("/home", function(req, res) {
-    res.render("welcome");
+    res.render("home");
   });
 
 app.get("/roster", function(req, res) {
