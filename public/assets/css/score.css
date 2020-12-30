@@ -53,7 +53,10 @@ h3 {
 .font {
   font-family: "Graduate", cursive;
   font-size: 100px;
-  color: #f0ad4e;
+  /* color: #f0ad4e; */
+  color: red;
+   -webkit-text-stroke-width: 2.0px;
+  -webkit-text-stroke-color: white;
 }
 .rightborder {
   border-right: 3px solid white;
