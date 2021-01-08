@@ -29,6 +29,9 @@ body {
 #roster-form {
   text-align: center;
 }
+#rostername-form {
+  text-align: center;
+}
 input {
   border: solid 2px black;
   width: 85%;
