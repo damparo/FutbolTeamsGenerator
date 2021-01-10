@@ -1,3 +1,5 @@
+
+// Add player to player pool code with delete feature (does not delete from database)
 let rosterField = [];
 
 // savedTeam();
@@ -17,6 +19,8 @@ $("#roster-form").submit(function (event) {
   }
   rosterField.push(nameRoster);
   $("#roster-creation").val("");
+  $("#teamone-list").text("");
+  $("#teamtwo-list").text("");
   $("#loneplayer").text("");
   manyPlayers();
 });
@@ -29,6 +33,8 @@ $("#roster-list").click(function (event) {
     manyPlayers();
   }
 });
+
+
 
 function manyPlayers() {
   $("#roster-list").text("");
@@ -47,8 +53,65 @@ function manyPlayers() {
     0;
   }
   $("#player-count").text(rosterField.length);
-}
+};
 
+//following code is to generate teams, sort players into teams and if necessary Free Agent
+
+
+$("#randomteams").click(function () {
+  let freeAgent = [];
+  let oneTeam = rosterField.concat(freeAgent);
+
+  function mix() {
+    for (let i = oneTeam.length - 1; i > 0; i--) {
+      let j = Math.floor(Math.random() * (i + 1));
+      let temp = oneTeam[i];
+      oneTeam[i] = oneTeam[j];
+      oneTeam[j] = temp;
+    }
+    return oneTeam;
+  }
+
+  mix();
+
+  $("#teamone-list").text("");
+  $("#teamtwo-list").text("");
+  $("#loneplayer").text("");
+
+  if (oneTeam.length % 2 !== 0) {
+    let hmm = oneTeam.pop();
+    freeAgent.push(hmm);
+    $("#loneplayer").append(freeAgent);
+
+    let twoTeams = oneTeam.length * 0.5;
+    aTeam = oneTeam.slice(0, twoTeams);
+
+    bTeam = oneTeam.slice(twoTeams);
+  } else {
+    let twoTeams = oneTeam.length * 0.5;
+    aTeam = oneTeam.slice(0, twoTeams);
+
+    bTeam = oneTeam.slice(twoTeams);
+  }
+
+  for (i = 0; i < aTeam.length; i++) {
+    let playerBox = aTeam[i];
+    let newLi = $("<li>");
+    newLi.text(playerBox);
+    $("#teamone-list").append(newLi);
+  }
+
+  localStorage.setItem("aTeam", JSON.stringify(aTeam));
+
+  for (i = 0; i < bTeam.length; i++) {
+    let playerBox = bTeam[i];
+    let newLi = $("<li>");
+    newLi.text(playerBox);
+    $("#teamtwo-list").append(newLi);
+  }
+
+  localStorage.setItem("bTeam", JSON.stringify(bTeam));
+});
 
 
 
