@@ -1,4 +1,3 @@
-
 // Add player to player pool code with delete feature (does not delete from database)
 let rosterField = [];
 
@@ -34,13 +33,11 @@ $("#roster-list").click(function (event) {
   }
 });
 
-
-
 function manyPlayers() {
   $("#roster-list").text("");
   for (i = 0; i < rosterField.length; i++) {
     let playerBox = rosterField[i];
-    let newLi = $("<li>"); 
+    let newLi = $("<li>");
     newLi.text(playerBox);
     newLi.attr("data-index", i);
     let nameBtn = $("<button>");
@@ -53,10 +50,9 @@ function manyPlayers() {
     0;
   }
   $("#player-count").text(rosterField.length);
-};
+}
 
 //following code is to generate teams, sort players into teams and if necessary Free Agent
-
 
 $("#randomteams").click(function () {
   let freeAgent = [];
@@ -113,33 +109,22 @@ $("#randomteams").click(function () {
   localStorage.setItem("bTeam", JSON.stringify(bTeam));
 });
 
+// Send POST request to save teams in MySQL database
+$("#saveteams").click(function (event) {
+  event.preventDefault();
+  console.log("button is working")
 
+  const teamInfo = {
+    rosterName: $("#roster-name").val().trim(),
+    team1: $("#teamone-list").val().trim(),
+    team2: $("#teamtwo-list").val().trim(),
+    freeAgent: $("#loneplayer").val().trim(),
+  };
 
-
-
-
-
-
-
-
-
-
-// Send POST request
-// $("#saveteam").click(function (event) {
-//   event.preventDefault();
-
-//   const teamInfo = {
-//     rosterName: $("#roster-name").val().trim(),
-//     team1: $("#teamone-list").val().trim(),
-//     team2: $("#teamtwo-list").val().trim(),
-//     freeAgent: $("#loneplayer").val().trim(),
-//   };
-
-//   $.ajax("/api/teams", {
-//     type: "POST",
-//     data: teamInfo,
-//   }).then(function () {
-//     console.log("teams saved!");
-//   });
-// });
-
+  $.ajax("/api/teams", {
+    type: "POST",
+    data: teamInfo,
+  }).then(function () {
+    console.log("teams saved!");
+  });
+});
