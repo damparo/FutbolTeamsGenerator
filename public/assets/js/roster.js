@@ -1,3 +1,5 @@
+// const { json } = require("express");
+
 // Add player to player pool code with delete feature (does not delete from database)
 let rosterField = [];
 
@@ -107,19 +109,39 @@ $("#randomteams").click(function () {
   }
 
   localStorage.setItem("bTeam", JSON.stringify(bTeam));
+
+
+
+  // console.log($("#teamtwo-list").text());
 });
+
+// console.log(bTeam);
+
+
 
 // Send POST request to save teams in MySQL database
 $("#saveteams").click(function (event) {
   event.preventDefault();
   console.log("button is working")
 
+
+  const aTeam = $("#teamone-list").text();
+  const aTeamField = [];
+  aTeamField.push(aTeam);
+  console.log(aTeamField);
+
+
   const teamInfo = {
-    rosterName: $("#roster-name").val().trim(),
-    team1: $("#teamone-list").val().trim(),
-    team2: $("#teamtwo-list").val().trim(),
-    freeAgent: $("#loneplayer").val().trim(),
+    rosterName: $("#roster-name").text(),
+    team1: $("#teamone-list").text(),
+    team2: $("#teamtwo-list").text(),
+    freeAgent: $("#loneplayer").text(),
   };
+  
+  
+  // const share = JSON.stringify(teamInfo)
+
+  // console.log(share);
 
   $.ajax("/api/teams", {
     type: "POST",

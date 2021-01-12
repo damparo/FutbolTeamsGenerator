@@ -3,13 +3,13 @@ const orm = require("../config/orm");
 const futbol = {
 
     all: function(cb) {
-        orm.all("futbol", function(res) {
+        orm.all("teams", function(res) {
           cb(res);
         });
       },
 
     create: function(cols, vals, cb){
-        orm.create("futbol", cols, vals, function(res){
+        orm.create("teams", cols, vals, function(res){
             cb(res);
         });
     },
