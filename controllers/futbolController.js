@@ -23,8 +23,9 @@ router.post("/api/teams", function (req, res) {
     ],
 
     [req.body.team1, req.body.team2, req.body.freeAgent],
-    function(err, result) {
-        if (err) throw err;
+    function(result) {
+        
+        // res.json({ id: result.insertId });
         console.log(result);
 
     });
