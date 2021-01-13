@@ -2,6 +2,10 @@
 
 // Add player to player pool code with delete feature (does not delete from database)
 let rosterField = [];
+let oneForSql = [];
+let twoForSql = [];
+let freeForSql = [];
+
 
 // savedTeam();
 manyPlayers();
@@ -75,11 +79,16 @@ $("#randomteams").click(function () {
   $("#teamone-list").text("");
   $("#teamtwo-list").text("");
   $("#loneplayer").text("");
+  oneForSql = [];
+  twoForSql = [];
+  freeForSql = [];
+
 
   if (oneTeam.length % 2 !== 0) {
     let hmm = oneTeam.pop();
     freeAgent.push(hmm);
     $("#loneplayer").append(freeAgent);
+    freeForSql.push(hmm);
 
     let twoTeams = oneTeam.length * 0.5;
     aTeam = oneTeam.slice(0, twoTeams);
@@ -97,6 +106,7 @@ $("#randomteams").click(function () {
     let newLi = $("<li>");
     newLi.text(playerBox);
     $("#teamone-list").append(newLi);
+    oneForSql.push(playerBox);
   }
 
   localStorage.setItem("aTeam", JSON.stringify(aTeam));
@@ -106,6 +116,7 @@ $("#randomteams").click(function () {
     let newLi = $("<li>");
     newLi.text(playerBox);
     $("#teamtwo-list").append(newLi);
+    twoForSql.push(playerBox);
   }
 
   localStorage.setItem("bTeam", JSON.stringify(bTeam));
@@ -125,23 +136,20 @@ $("#saveteams").click(function (event) {
   console.log("button is working")
 
 
-  const aTeam = $("#teamone-list").text();
-  const aTeamField = [];
-  aTeamField.push(aTeam);
-  console.log(aTeamField);
 
+  console.log(oneForSql);
+  console.log(twoForSql);
+  console.log(freeForSql);
+  
 
   const teamInfo = {
     rosterName: $("#roster-name").text(),
-    team1: $("#teamone-list").text(),
-    team2: $("#teamtwo-list").text(),
-    freeAgent: $("#loneplayer").text(),
+    team1: oneForSql,
+    team2: twoForSql,
+    freeAgent: freeForSql,
   };
   
   
-  // const share = JSON.stringify(teamInfo)
-
-  // console.log(share);
 
   $.ajax("/api/teams", {
     type: "POST",
@@ -149,4 +157,9 @@ $("#saveteams").click(function (event) {
   }).then(function () {
     console.log("teams saved!");
   });
+
+
+
+
+
 });

@@ -7,6 +7,7 @@ const connection = mysql.createConnection({
   user: "root",
   password: "",
   database: "futbol_roster_db"
+  // multipleStatements: true,
 });
 
 // Make connection.

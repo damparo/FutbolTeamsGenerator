@@ -22,7 +22,8 @@ router.post("/api/teams", function (req, res) {
         "Team_1", "Team_2", "Free_Agent"
     ],
 
-    [req.body.team1, req.body.team2, req.body.freeAgent],
+    // [req.body.team1, req.body.team2, req.body.freeAgent],
+    [[req.body.team1], [req.body.team2], [req.body.freeAgent]],
     function(result) {
         
         // res.json({ id: result.insertId });
@@ -30,14 +31,7 @@ router.post("/api/teams", function (req, res) {
 
     });
 
-//   cat.create(
-//     ["name", "sleepy"],
-//     [req.body.name, req.body.sleepy],
-//     function (result) {
-//       // Send back the ID of the new quote
-//       res.json({ id: result.insertId });
-//     }
-//   );
+
 
 });
 
