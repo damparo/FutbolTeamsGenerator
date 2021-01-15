@@ -12,6 +12,12 @@ const futbol = {
         orm.create("teams", cols, vals, function(res){
             cb(res);
         });
+    },
+
+    create2: function(cols, vals, cb){
+        orm.create("rosters", cols, vals, function(res){
+            cb(res);
+        });
     }
 
 };

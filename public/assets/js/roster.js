@@ -5,6 +5,7 @@ let rosterField = [];
 let oneForSql = [];
 let twoForSql = [];
 let freeForSql = [];
+let rosterTitle =[];
 
 
 // savedTeam();
@@ -141,15 +142,23 @@ $("#saveteams").click(function (event) {
   console.log(twoForSql);
   console.log(freeForSql);
   
+  rosterTitle.push($("#roster-name").val().trim());  
 
   const teamInfo = {
-    rosterName: $("#roster-name").text(),
+    rosterName: rosterTitle,
     team1: oneForSql,
     team2: twoForSql,
     freeAgent: freeForSql,
   };
   
   
+
+  $.ajax("/api/rosters", {
+    type: "POST",
+    data: teamInfo,
+  }).then(function () {
+    console.log("teams saved!");
+  });
 
   $.ajax("/api/teams", {
     type: "POST",
@@ -160,6 +169,13 @@ $("#saveteams").click(function (event) {
 
 
 
+
+
+
+
+  $("#roster-name").val("")
+  rosterTitle = [];
+  console.log(rosterTitle);
 
 
 });
