@@ -15,7 +15,7 @@ const futbol = {
     },
 
     create2: function(cols, vals, cb){
-        orm.create("rosters", cols, vals, function(res){
+        orm.create2("rosters", cols, vals, function(res){
             cb(res);
         });
     }
