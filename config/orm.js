@@ -12,15 +12,15 @@ function printQuestionMarks(num) {
   // return arrArr.toString();
 };
 
-function printQuestionMarks2(num) {
-  var arr = [];
+// function printQuestionMarks2(num) {
+//   var arr = [];
 
-  for (var i = 0; i < num; i++) {
-    arr.push("?");
-  }
+//   for (var i = 0; i < num; i++) {
+//     arr.push("?");
+//   }
 
-  return arr.toString();
-};
+//   return arr.toString();
+// };
 
 const orm = {
   create: function (table, cols, vals, cb) {
@@ -31,28 +31,8 @@ const orm = {
     queryString += ") ";
     // queryString += "VALUES (";
     queryString += "VALUES ";
-    queryString += printQuestionMarks(vals.length);
-
-    console.log(queryString);
-
-    connection.query(queryString, vals, function (err, result) {
-      if (err) {
-        throw err;
-      }
-
-      cb(result);
-    });
-  },
-
-  create2: function (table, cols, vals, cb) {
-    var queryString = "INSERT INTO " + table;
-
-    queryString += " (";
-    queryString += cols.toString();
-    queryString += ") ";
-    queryString += "VALUES";
     queryString += "(";
-    queryString += printQuestionMarks2(vals.length);
+    queryString += printQuestionMarks(vals.length);
     queryString += ") ";
 
     console.log(queryString);
@@ -65,6 +45,28 @@ const orm = {
       cb(result);
     });
   }
+
+  // create2: function (table, cols, vals, cb) {
+  //   var queryString = "INSERT INTO " + table;
+
+  //   queryString += " (";
+  //   queryString += cols.toString();
+  //   queryString += ") ";
+  //   queryString += "VALUES";
+  //   queryString += "(";
+  //   queryString += printQuestionMarks2(vals.length);
+  //   queryString += ") ";
+
+  //   console.log(queryString);
+
+  //   connection.query(queryString, vals, function (err, result) {
+  //     if (err) {
+  //       throw err;
+  //     }
+
+  //     cb(result);
+  //   });
+  // }
 
   // leftJoin: function(whatToSelect, tableOne, tableTwo, onTableOneCol, onTableTwoCol) {
   //   var queryString = "SELECT ?? FROM ?? AS tOne";

@@ -5,8 +5,7 @@ let rosterField = [];
 let oneForSql = [];
 let twoForSql = [];
 let freeForSql = [];
-let rosterTitle =[];
-
+let rosterTitle = [];
 
 // savedTeam();
 manyPlayers();
@@ -84,7 +83,6 @@ $("#randomteams").click(function () {
   twoForSql = [];
   freeForSql = [];
 
-
   if (oneTeam.length % 2 !== 0) {
     let hmm = oneTeam.pop();
     freeAgent.push(hmm);
@@ -107,6 +105,9 @@ $("#randomteams").click(function () {
     let newLi = $("<li>");
     newLi.text(playerBox);
     $("#teamone-list").append(newLi);
+    // let indivArr = [];
+    // indivArr.push(playerBox);
+    // oneForSql.push(indivArr);
     oneForSql.push(playerBox);
   }
 
@@ -117,48 +118,55 @@ $("#randomteams").click(function () {
     let newLi = $("<li>");
     newLi.text(playerBox);
     $("#teamtwo-list").append(newLi);
+    // let indivArr = [];
+    // indivArr.push(playerBox);
+    // twoForSql.push(indivArr);
     twoForSql.push(playerBox);
   }
 
   localStorage.setItem("bTeam", JSON.stringify(bTeam));
-
-
 
   // console.log($("#teamtwo-list").text());
 });
 
 // console.log(bTeam);
 
-
-
 // Send POST request to save teams in MySQL database
 $("#saveteams").click(function (event) {
   event.preventDefault();
-  console.log("button is working")
-
-
+  console.log("button is working");
 
   console.log(oneForSql);
   console.log(twoForSql);
   console.log(freeForSql);
-  
-  rosterTitle.push($("#roster-name").val().trim());  
+
+  rosterTitle.push($("#roster-name").val().trim());
+
+  const teamOneObj = JSON.stringify(oneForSql);
+  console.log(teamOneObj);
+
+  const teamTwoObj = JSON.stringify(twoForSql);
+  console.log(teamTwoObj);
+
+  // const freeAgentObj = JSON.stringify(freeForSql);
+  // console.log(freeAgentObj);
+
+  // const rosterTitleObj= JSON.stringify(oneForSql);
+  // console.log(bigFile);
 
   const teamInfo = {
     rosterName: rosterTitle,
-    team1: oneForSql,
-    team2: twoForSql,
+    team1: teamOneObj,
+    team2: teamTwoObj,
     freeAgent: freeForSql,
   };
-  
-  
 
-  $.ajax("/api/rosters", {
-    type: "POST",
-    data: teamInfo,
-  }).then(function () {
-    console.log("teams saved!");
-  });
+  // $.ajax("/api/rosters", {
+  //   type: "POST",
+  //   data: teamInfo,
+  // }).then(function () {
+  //   console.log("teams saved!");
+  // });
 
   $.ajax("/api/teams", {
     type: "POST",
@@ -167,15 +175,7 @@ $("#saveteams").click(function (event) {
     console.log("teams saved!");
   });
 
-
-
-
-
-
-
-  $("#roster-name").val("")
-  rosterTitle = [];
-  console.log(rosterTitle);
-
-
+  // $("#roster-name").val("")
+  // rosterTitle = [];
+  // console.log(rosterTitle);
 });
