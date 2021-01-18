@@ -21,12 +21,12 @@ router.post("/api/teams", function (req, res) {
   
   futbol.create([
 
-        "Team_1", "Team_2"
+        "Team_1", "Team_2", "Roster_name" 
         // "Team_1", "Team_2", "Free_Agent", "roster_name" 
     ],
     
     // [req.body.team1, req.body.team2],
-     [[req.body.team1], [req.body.team2]],
+     [[req.body.team1], [req.body.team2], [req.body.rosterName]],
     // [req.body.team1, req.body.team2, req.body.freeAgent, req.body.rosterName],
     // [[req.body.team1], [req.body.team2], [req.body.freeAgent]],
     function(result) {
