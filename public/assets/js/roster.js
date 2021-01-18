@@ -175,7 +175,7 @@ $("#saveteams").click(function (event) {
     console.log("teams saved!");
   });
 
-  // $("#roster-name").val("")
-  // rosterTitle = [];
-  // console.log(rosterTitle);
+  $("#roster-name").val("")
+  rosterTitle = [];
+  console.log(rosterTitle);
 });
