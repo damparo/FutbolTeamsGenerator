@@ -188,7 +188,7 @@ $("#saveteams").click(function (event) {
     "border-width": "thin",
     "border-color": "#f0ad4e",
     // "border-color": "lightgrey",
-  }).addClass("btn-lg").text( $("#roster-name").val().trim()));
+  }).addClass("fetch-roster btn-lg").text( $("#roster-name").val().trim()));
 
 
 
@@ -201,3 +201,26 @@ $("#saveteams").click(function (event) {
 
 
 });
+
+
+$("#button-row").on("click", ".fetch-roster", function () {
+
+
+  $.ajax("/api/teams", {
+    type: "GET",
+    data: teamInfo,
+  }).then(function () {
+    console.log("roster fetched!");
+  });
+
+
+
+
+
+
+
+
+
+
+
+})
