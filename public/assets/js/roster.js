@@ -175,7 +175,29 @@ $("#saveteams").click(function (event) {
     console.log("teams saved!");
   });
 
+  // hitting save also creates a button with the roster name. The btn allowes user to fetch saved roster by name
+
+  $("#button-row").append($("<button>").css({
+    // width: "341px",
+    "color": "white",
+    "text-align": "center",
+    "background-color": "black",
+    padding: "10px",
+    "padding-left": "15px",
+    "border-style": "solid",
+    "border-width": "thin",
+    "border-color": "#f0ad4e",
+    // "border-color": "lightgrey",
+  }).addClass("btn-lg").text( $("#roster-name").val().trim()));
+
+
+
+
   $("#roster-name").val("")
   rosterTitle = [];
   console.log(rosterTitle);
+
+
+
+
 });
