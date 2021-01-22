@@ -131,6 +131,8 @@ $("#randomteams").click(function () {
 
 // console.log(bTeam);
 
+
+
 // Send POST request to save teams in MySQL database
 $("#saveteams").click(function (event) {
   event.preventDefault();
@@ -148,12 +150,7 @@ $("#saveteams").click(function (event) {
   const teamTwoObj = JSON.stringify(twoForSql);
   console.log(teamTwoObj);
 
-  // const freeAgentObj = JSON.stringify(freeForSql);
-  // console.log(freeAgentObj);
-
-  // const rosterTitleObj= JSON.stringify(oneForSql);
-  // console.log(bigFile);
-
+  
   const teamInfo = {
     rosterName: rosterTitle,
     team1: teamOneObj,
@@ -161,12 +158,6 @@ $("#saveteams").click(function (event) {
     freeAgent: freeForSql,
   };
 
-  // $.ajax("/api/rosters", {
-  //   type: "POST",
-  //   data: teamInfo,
-  // }).then(function () {
-  //   console.log("teams saved!");
-  // });
 
   $.ajax("/api/teams", {
     type: "POST",
@@ -175,8 +166,9 @@ $("#saveteams").click(function (event) {
     console.log("teams saved!");
   });
 
-  // hitting save also creates a button with the roster name. The btn allowes user to fetch saved roster by name
 
+
+  // hitting save also creates a button with the roster name. 
   $("#button-row").append($("<button>").css({
     // width: "341px",
     "color": "white",
@@ -186,25 +178,22 @@ $("#saveteams").click(function (event) {
     "padding-left": "15px",
     "border-style": "solid",
     "border-width": "thin",
-    "border-color": "#f0ad4e",
-    // "border-color": "lightgrey",
+    
   }).addClass("fetch-roster btn-lg").text( $("#roster-name").val().trim()));
-
-
-
 
   $("#roster-name").val("")
   rosterTitle = [];
   console.log(rosterTitle);
 
-
-
-
 });
 
+//The btn allowes user to fetch saved roster by name
 
 $("#button-row").on("click", ".fetch-roster", function () {
 
+
+
+console.log("hello");
 
   $.ajax("/api/teams", {
     type: "GET",
@@ -223,4 +212,4 @@ $("#button-row").on("click", ".fetch-roster", function () {
 
 
 
-})
+});
