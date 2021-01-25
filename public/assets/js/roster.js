@@ -171,10 +171,7 @@ $("#saveteams").click(function (event) {
 
   // hitting save also creates a button with the roster name.
   cage.push($("#roster-name").val().trim())
-  //  cage = $.merge(buttonTeamName,rosterTitle);
-   console.log(cage);
   buttonNames();
-
 
   function buttonNames() {
 
@@ -182,10 +179,10 @@ $("#saveteams").click(function (event) {
 
     for ( i = 0; i < cage.length; i++){
   
-      let btnNames = cage[i];
+      // let btnNames = cage[i];
       let btnBtn = $("<button>");
-      btnBtn.text(btnNames);
-      btnBtn.attr("data-index", i);
+      btnBtn.text(cage[i]);
+      btnBtn.attr("data-index", cage[i]);
       btnBtn.css({
       
         color: "white",
@@ -196,51 +193,42 @@ $("#saveteams").click(function (event) {
         "border-style": "solid",
         "border-width": "thin",
       });
+      btnBtn.addClass("grab-rostername");
       
       $("#button-row").append(btnBtn);
             
     }};
   
- 
-  
-
-  // $("#button-row").append(
-  //   $("<button>")
-  //     .css({
-  //       // width: "341px",
-  //       color: "white",
-  //       "text-align": "center",
-  //       "background-color": "black",
-  //       padding: "10px",
-  //       "padding-left": "15px",
-  //       "border-style": "solid",
-  //       "border-width": "thin",
-  //     })
-  //     .addClass("fetch-roster btn-lg")
-  //     .text($("#roster-name").val().trim())
-  //     .attr("data-btnname", i)
-  //     // .attr("data-btnname")
-  // );
-  
-  // cage = $.merge(buttonTeamName,rosterTitle);
 
   $("#roster-name").val("");
   rosterTitle = [];
-  // rosterTitle = "";
   console.log(rosterTitle);
-  // console.log(cage);
 });
 
-$("#button-row").click(function (event) {
-  let element = event.target;
-  if (element.matches("button") === true) {
-    let index = element.parentElement.getAttribute("data-index");
-    console.log(index);
+
+
+
+// let forRetrieve = []
+
+$("#button-row").on("click", ".grab-rostername", function(event){
+  event.preventDefault();
+  const clickRoster = $(this).attr("data-index");
+  console.log(clickRoster);
+});
+
+
+// click(function (event) {
+//   let element = event.target;
+//   if (element.matches("button") === true) {
+//     let index = element.parentElement.getAttribute("data-index");
+
+//     cage.splice
+//     console.log(index);
 
    
     
-  }
-});
+//   }
+// });
 
 
 //The btn allowes user to fetch team data by roster name
