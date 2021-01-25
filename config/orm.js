@@ -34,21 +34,21 @@ const orm = {
   },
 
 
-    recieveData: function (table, cols, vals, cb) {
-      var queryString = "SELECT" + cols.toString() + "FROM" + table + "WHERE";
+    // recieveData: function (table, cols, vals, cb) {
+    //   var queryString = "SELECT" + cols.toString() + "FROM" + table + "WHERE Roster_name = ?";
   
-      queryString += " Roster_name";
+     
   
-      console.log(queryString);
+    //   console.log(queryString);
   
-      connection.query(queryString, vals, function (err, result) {
-        if (err) {
-          throw err;
-        }
+    //   connection.query(queryString, [req.params], function (err, data) {
+    //     if (err) {
+    //       throw err;
+    //     }
   
-        cb(result);
-      });
-    }
+       
+    //   });
+    // }
 
 
 

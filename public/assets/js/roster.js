@@ -133,6 +133,11 @@ $("#randomteams").click(function () {
 
 
 
+
+
+// let buttonTeamName =[];
+let cage = [];
+
 // Send POST request to save teams in MySQL database
 $("#saveteams").click(function (event) {
   event.preventDefault();
@@ -150,14 +155,12 @@ $("#saveteams").click(function (event) {
   const teamTwoObj = JSON.stringify(twoForSql);
   console.log(teamTwoObj);
 
-  
   const teamInfo = {
     rosterName: rosterTitle,
     team1: teamOneObj,
     team2: teamTwoObj,
     freeAgent: freeForSql,
   };
-
 
   $.ajax("/api/teams", {
     type: "POST",
@@ -166,50 +169,119 @@ $("#saveteams").click(function (event) {
     console.log("teams saved!");
   });
 
+  // hitting save also creates a button with the roster name.
+  cage.push($("#roster-name").val().trim())
+  //  cage = $.merge(buttonTeamName,rosterTitle);
+   console.log(cage);
+  buttonNames();
 
 
-  // hitting save also creates a button with the roster name. 
-  $("#button-row").append($("<button>").css({
-    // width: "341px",
-    "color": "white",
-    "text-align": "center",
-    "background-color": "black",
-    padding: "10px",
-    "padding-left": "15px",
-    "border-style": "solid",
-    "border-width": "thin",
-    
-  }).addClass("fetch-roster btn-lg").text( $("#roster-name").val().trim()));
+  function buttonNames() {
 
-  $("#roster-name").val("")
+    $("#button-row").text("");
+
+    for ( i = 0; i < cage.length; i++){
+  
+      let btnNames = cage[i];
+      let btnBtn = $("<button>");
+      btnBtn.text(btnNames);
+      btnBtn.attr("data-index", i);
+      btnBtn.css({
+      
+        color: "white",
+        "text-align": "center",
+        "background-color": "black",
+        padding: "10px",
+        "padding-left": "15px",
+        "border-style": "solid",
+        "border-width": "thin",
+      });
+      
+      $("#button-row").append(btnBtn);
+            
+    }};
+  
+ 
+  
+
+  // $("#button-row").append(
+  //   $("<button>")
+  //     .css({
+  //       // width: "341px",
+  //       color: "white",
+  //       "text-align": "center",
+  //       "background-color": "black",
+  //       padding: "10px",
+  //       "padding-left": "15px",
+  //       "border-style": "solid",
+  //       "border-width": "thin",
+  //     })
+  //     .addClass("fetch-roster btn-lg")
+  //     .text($("#roster-name").val().trim())
+  //     .attr("data-btnname", i)
+  //     // .attr("data-btnname")
+  // );
+  
+  // cage = $.merge(buttonTeamName,rosterTitle);
+
+  $("#roster-name").val("");
   rosterTitle = [];
+  // rosterTitle = "";
   console.log(rosterTitle);
-
+  // console.log(cage);
 });
 
-//The btn allowes user to fetch saved roster by name
+$("#button-row").click(function (event) {
+  let element = event.target;
+  if (element.matches("button") === true) {
+    let index = element.parentElement.getAttribute("data-index");
+    console.log(index);
 
-$("#button-row").on("click", ".fetch-roster", function () {
-
-
-
-console.log("hello");
-
-  $.ajax("/api/teams", {
-    type: "GET",
-    data: teamInfo,
-  }).then(function () {
-    console.log("roster fetched!");
-  });
-
-
-
-
-
-
-
-
-
-
-
+   
+    
+  }
 });
+
+
+//The btn allowes user to fetch team data by roster name
+
+// $("#button-row").on("click", ".fetch-roster", function () {
+//   console.log("hello");
+//   console.log(cage);
+
+  
+  
+ 
+  
+//   // want to be able to grab name from button, and use that to retrieve roster from database
+//   // const soccerInfo = $(".fetch-roster").text();
+
+
+//   // console.log(soccerInfo);
+
+//   // $.ajax("/api/teams", {
+//   //   type: "GET",
+//   // }).then(function (data) {
+//   //   console.log(data);
+
+//   //   // displayTeams();
+
+//   //   function displayTeams() {
+//   //     // clear present data in T1, T2, FA;
+//   //     $("#roster-creation").val("");
+//   //     $("#teamone-list").text("");
+//   //     $("#teamtwo-list").text("");
+//   //     $("#loneplayer").text("");
+
+//   //     //parse the data from database;
+
+//   //     //append this data to T1, T2
+//   //     if (oneTeam.length % 2 !== 0) {
+//   //       let hmm = oneTeam.pop();
+//   //       freeAgent.push(hmm);
+//   //       $("#loneplayer").append(freeAgent);
+//   //       freeForSql.push(hmm);
+//   //     };
+//   //   };
+//   // });
+// });

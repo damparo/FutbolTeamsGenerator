@@ -54,7 +54,4 @@ router.get("/api/teams", function (req, res) {
 
 
 // Export routes for server.js to use.
-
-router.get("/api/teams", function (req, res) {});
-
 module.exports = router;
