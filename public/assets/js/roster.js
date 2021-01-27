@@ -105,9 +105,6 @@ $("#randomteams").click(function () {
     let newLi = $("<li>");
     newLi.text(playerBox);
     $("#teamone-list").append(newLi);
-    // let indivArr = [];
-    // indivArr.push(playerBox);
-    // oneForSql.push(indivArr);
     oneForSql.push(playerBox);
   }
 
@@ -118,27 +115,16 @@ $("#randomteams").click(function () {
     let newLi = $("<li>");
     newLi.text(playerBox);
     $("#teamtwo-list").append(newLi);
-    // let indivArr = [];
-    // indivArr.push(playerBox);
-    // twoForSql.push(indivArr);
     twoForSql.push(playerBox);
   }
 
   localStorage.setItem("bTeam", JSON.stringify(bTeam));
-
-  // console.log($("#teamtwo-list").text());
 });
 
-// console.log(bTeam);
-
-
-
-
-
-// let buttonTeamName =[];
 let cage = [];
 
 // Send POST request to save teams in MySQL database
+
 $("#saveteams").click(function (event) {
   event.preventDefault();
   console.log("button is working");
@@ -170,21 +156,17 @@ $("#saveteams").click(function (event) {
   });
 
   // hitting save also creates a button with the roster name.
-  cage.push($("#roster-name").val().trim())
+  cage.push($("#roster-name").val().trim());
   buttonNames();
 
   function buttonNames() {
-
     $("#button-row").text("");
 
-    for ( i = 0; i < cage.length; i++){
-  
-      // let btnNames = cage[i];
+    for (i = 0; i < cage.length; i++) {
       let btnBtn = $("<button>");
       btnBtn.text(cage[i]);
       btnBtn.attr("data-index", cage[i]);
       btnBtn.css({
-      
         color: "white",
         "text-align": "center",
         "background-color": "black",
@@ -194,63 +176,41 @@ $("#saveteams").click(function (event) {
         "border-width": "thin",
       });
       btnBtn.addClass("grab-rostername");
-      
+
       $("#button-row").append(btnBtn);
-            
-    }};
-  
+    }
+  }
 
   $("#roster-name").val("");
   rosterTitle = [];
   console.log(rosterTitle);
 });
 
+// Clicking on roster buttons, GET request, to retrieve rosters and populate fields
 
 
-
-// let forRetrieve = []
-
-$("#button-row").on("click", ".grab-rostername", function(event){
+$("#button-row").on("click", ".grab-rostername", function (event) {
   event.preventDefault();
-  const clickRoster = $(this).attr("data-index");
+  let clickRoster = $(this).attr("data-index");
   console.log(clickRoster);
+
+  let nameToServer = clickRoster;
+  console.log(nameToServer);
+
+  
+  // want to be able to grab name from button, and use that to retrieve roster from database
+
+  $.ajax("/api/teams", {
+      type: "GET",
+      data: nameToServer
+    }).then(function (data) {
+      console.log(data);
+    });
+    
+
+
 });
 
-
-// click(function (event) {
-//   let element = event.target;
-//   if (element.matches("button") === true) {
-//     let index = element.parentElement.getAttribute("data-index");
-
-//     cage.splice
-//     console.log(index);
-
-   
-    
-//   }
-// });
-
-
-//The btn allowes user to fetch team data by roster name
-
-// $("#button-row").on("click", ".fetch-roster", function () {
-//   console.log("hello");
-//   console.log(cage);
-
-  
-  
- 
-  
-//   // want to be able to grab name from button, and use that to retrieve roster from database
-//   // const soccerInfo = $(".fetch-roster").text();
-
-
-//   // console.log(soccerInfo);
-
-//   // $.ajax("/api/teams", {
-//   //   type: "GET",
-//   // }).then(function (data) {
-//   //   console.log(data);
 
 //   //   // displayTeams();
 

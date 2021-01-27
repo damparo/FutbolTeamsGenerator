@@ -36,12 +36,13 @@ router.post("/api/teams", function (req, res) {
 router.get("/api/teams", function (req, res) {
   futbol.recieveData(
     ["Team_1", "Team_2", "Free_Agent", "Roster_name"],
+    
 
   [
-    [res.body.team1],
-    [res.body.team2],
-    [res.body.freeAgent],
-    [res.body.rosterName],
+    // [res.body.team1],
+    // [res.body.team2],
+    // [res.body.freeAgent],
+    [req.body.nameToServer]
   ],
 
   function (res) {
