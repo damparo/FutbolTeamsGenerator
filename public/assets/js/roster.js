@@ -194,15 +194,19 @@ $("#button-row").on("click", ".grab-rostername", function (event) {
   let clickRoster = $(this).attr("data-index");
   console.log(clickRoster);
 
-  let nameToServer = clickRoster;
-  console.log(nameToServer);
+  // let nameToServer = clickRoster;
+  // console.log(nameToServer);
 
   
   // want to be able to grab name from button, and use that to retrieve roster from database
 
   $.ajax("/api/teams", {
       type: "GET",
-      data: nameToServer
+      data: {
+
+        "infoTeam": clickRoster
+
+      }
     }).then(function (data) {
       console.log(data);
     });

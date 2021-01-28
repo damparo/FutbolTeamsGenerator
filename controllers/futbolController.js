@@ -1,5 +1,9 @@
 const express = require("express");
 
+
+// testing
+const connection = require("../config/connection.js");
+
 const router = express.Router();
 
 const futbol = require("../models/futbol");
@@ -33,21 +37,37 @@ router.post("/api/teams", function (req, res) {
   );
 });
 
-router.get("/api/teams", function (req, res) {
-  futbol.recieveData(
-    ["Team_1", "Team_2", "Free_Agent", "Roster_name"],
+// router.get("/api/teams" , function (req, res) {
+//   futbol.recieveData(
+//     ["Team_1", "Team_2", "Free_Agent", "Roster_name"],
     
 
-  [
-    // [res.body.team1],
-    // [res.body.team2],
-    // [res.body.freeAgent],
-    [req.body.nameToServer]
-  ],
+//   [
+//     // [res.body.team1],
+//     // [res.body.team2],
+//     // [res.body.freeAgent],
+//     // [req.body.nameToServer]
+//     [req.body.nameToServer]
+//   ],
 
-  function (res) {
-    console.log(res);
+//   function (res) {
+//     console.log(res);
+//   });
+
+// });
+router.get("/api/teams", function (req, res) {
+
+
+  connection.query("SELECT Team_1, Team_2, Free_Agent, Roster_name FROM teams WHERE Roster_name = ?", [req.infoTeam], function (err, result) {
+    if (err) {
+      throw err;
+    }
+
+    console.log(req)
+    // res.json(result);
   });
+
+ 
 
 });
 

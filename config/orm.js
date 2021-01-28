@@ -33,29 +33,30 @@ const orm = {
     });
   },
 
-  recieveData: function (table, cols, vals, cb) {
-    var queryString = "SELECT";
+  // recieveData: function (table, cols, vals, cb) {
+  //   var queryString = "SELECT ";
 
-    queryString += " (";
-    queryString += cols.toString();
-    queryString += ") ";
-    queryString += "FROM ";
-    queryString += table;
-    queryString += " WHERE Roster_name = ";
-    // queryString += " ?";
-    queryString += printQuestionMarks(vals.length);
+  //   // queryString += " (";
+  //   queryString += cols.toString();
+  //   // queryString += ") ";
+  //   queryString += " FROM ";
+  //   queryString += table;
+  //   queryString += " WHERE Roster_name = ";
+  //   // queryString += " ?";
+  //   queryString += printQuestionMarks(vals.length);
     
 
-    console.log(queryString);
+  //   console.log(queryString);
 
-    connection.query(queryString, vals, function (err, data) {
-      if (err) {
-        throw err;
-      }
+  //   connection.query(queryString, vals, function (err, results) {
+  //     if (err) {
+  //       throw err;
+  //     }
 
-      cb({ teams: data });
-    });
-  },
+  //     // cb({ teams: data });
+  //     cb((results));
+  //   });
+  // },
 };
 
 // Export the orm object for the model (futbol.js).
