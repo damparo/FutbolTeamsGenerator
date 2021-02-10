@@ -12,6 +12,8 @@ function printQuestionMarks(num) {
 
 const orm = {
   create: function (table, cols, vals, cb) {
+    console.log(vals);
+
     var queryString = "INSERT INTO " + table;
 
     queryString += " (";
@@ -33,30 +35,44 @@ const orm = {
     });
   },
 
-  // recieveData: function (table, cols, vals, cb) {
-  //   var queryString = "SELECT ";
+  recieveData: function (cols, vals, cb) {
 
-  //   // queryString += " (";
-  //   queryString += cols.toString();
-  //   // queryString += ") ";
-  //   queryString += " FROM ";
-  //   queryString += table;
-  //   queryString += " WHERE Roster_name = ";
-  //   // queryString += " ?";
-  //   queryString += printQuestionMarks(vals.length);
-    
+    // var queryString = "SELECT ??, ??, ??, ?? FROM ?? WHERE Roster_name = '??'";
 
-  //   console.log(queryString);
+    // console.log(vals);
+    // console.log(cols);
+    const nameName = vals.toString();
+    // console.log(nameName);
 
-  //   connection.query(queryString, vals, function (err, results) {
-  //     if (err) {
-  //       throw err;
-  //     }
 
-  //     // cb({ teams: data });
-  //     cb((results));
-  //   });
-  // },
+    var queryString = "SELECT ";
+
+    // queryString += " (";
+    queryString += cols[0].toString() + ",";
+    queryString += cols[1].toString() + ",";
+    queryString += cols[2].toString() + ",";
+    queryString += cols[3].toString();
+    // queryString += ") ";
+    queryString += " FROM ";
+    queryString += cols[4].toString();
+    queryString += " WHERE Roster_name = ";
+    // queryString += "(";
+    // queryString += "?" ;
+    queryString += printQuestionMarks(vals.length);
+    // queryString += ")";
+
+    console.log(queryString);
+
+    connection.query(queryString, nameName, function(err, data) {
+      if (err) {
+        throw err;
+      }
+
+      // cb({ teams: data });
+      cb(data);
+      console.log(data)
+    });
+  },
 };
 
 // Export the orm object for the model (futbol.js).

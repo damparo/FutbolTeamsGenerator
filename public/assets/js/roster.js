@@ -157,64 +157,60 @@ $("#saveteams").click(function (event) {
 
   // hitting save also creates a button with the roster name.
   cage.push($("#roster-name").val().trim());
+
   buttonNames();
-
-  function buttonNames() {
-    $("#button-row").text("");
-
-    for (i = 0; i < cage.length; i++) {
-      let btnBtn = $("<button>");
-      btnBtn.text(cage[i]);
-      btnBtn.attr("data-index", cage[i]);
-      btnBtn.css({
-        color: "white",
-        "text-align": "center",
-        "background-color": "black",
-        padding: "10px",
-        "padding-left": "15px",
-        "border-style": "solid",
-        "border-width": "thin",
-      });
-      btnBtn.addClass("grab-rostername");
-
-      $("#button-row").append(btnBtn);
-    }
-  }
 
   $("#roster-name").val("");
   rosterTitle = [];
   console.log(rosterTitle);
+  // event.preventDefault();
 });
+
+function buttonNames() {
+  // event.preventDefault();
+  $("#button-row").text("");
+
+  for (i = 0; i < cage.length; i++) {
+    let btnBtn = $("<button>");
+    btnBtn.text(cage[i]);
+    btnBtn.attr("data-index", cage[i]);
+    btnBtn.css({
+      color: "white",
+      "text-align": "center",
+      "background-color": "black",
+      padding: "10px",
+      "padding-left": "15px",
+      "border-style": "solid",
+      "border-width": "thin",
+    });
+    btnBtn.addClass("grab-rostername");
+
+    $("#button-row").append(btnBtn);
+  }
+}
 
 // Clicking on roster buttons, GET request, to retrieve rosters and populate fields
 
+let package = [];
 
 $("#button-row").on("click", ".grab-rostername", function (event) {
   event.preventDefault();
   let clickRoster = $(this).attr("data-index");
   console.log(clickRoster);
+  // const titleTeams =  clickRoster;
 
-  // let nameToServer = clickRoster;
-  // console.log(nameToServer);
+  const nameQuery = clickRoster;
+  console.log(nameQuery);
 
-  
+
   // want to be able to grab name from button, and use that to retrieve roster from database
 
-  $.ajax("/api/teams", {
-      type: "GET",
-      data: {
-
-        "infoTeam": clickRoster
-
-      }
-    }).then(function (data) {
-      console.log(data);
-    });
-    
-
-
+  $.ajax("/api/teams/" + nameQuery, {
+    type: "GET",
+  }).then(function (data) {
+    console.log(data);
+  });
 });
-
 
 //   //   // displayTeams();
 

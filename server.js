@@ -19,9 +19,9 @@ app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 // Import routes and give the server access to them.
-const routes = require("./controllers/futbolController");
+const router = require("./controllers/futbolController");
 
-app.use(routes);
+app.use(router);
 
 
 
