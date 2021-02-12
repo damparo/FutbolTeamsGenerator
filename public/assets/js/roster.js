@@ -202,13 +202,15 @@ $("#button-row").on("click", ".grab-rostername", function (event) {
   const nameQuery = clickRoster;
   console.log(nameQuery);
 
-
   // want to be able to grab name from button, and use that to retrieve roster from database
 
   $.ajax("/api/teams/" + nameQuery, {
     type: "GET",
-  }).then(function (data) {
-    console.log(data);
+  }).then(function (result) {
+    console.log(JSON.parse(result[0].Team_1));
+    console.log(JSON.parse(result[0].Team_2));
+    console.log(result[0].Free_Agent);
+    console.log(result[0].Roster_name);
   });
 });
 

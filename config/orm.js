@@ -63,14 +63,14 @@ const orm = {
 
     console.log(queryString);
 
-    connection.query(queryString, nameName, function(err, data) {
+    connection.query(queryString, nameName, function(err, result) {
       if (err) {
         throw err;
       }
 
       // cb({ teams: data });
-      cb(data);
-      console.log(data)
+      cb(result);
+      console.log(result)
     });
   },
 };

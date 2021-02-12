@@ -5,8 +5,8 @@ const futbol = {
     recieveData: function(cols, vals, cb)
     
     {
-        orm.recieveData(cols, vals, function(res){
-            cb(res);
+        orm.recieveData(cols, vals, function(result){
+            cb(result);
         });
     },
 
