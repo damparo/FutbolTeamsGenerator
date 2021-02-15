@@ -207,10 +207,42 @@ $("#button-row").on("click", ".grab-rostername", function (event) {
   $.ajax("/api/teams/" + nameQuery, {
     type: "GET",
   }).then(function (result) {
-    console.log(JSON.parse(result[0].Team_1));
-    console.log(JSON.parse(result[0].Team_2));
-    console.log(result[0].Free_Agent);
-    console.log(result[0].Roster_name);
+    console.log( JSON.parse(result[0].Team_1));
+
+    const firstTeam = JSON.parse(result[0].Team_1);
+  // JSON.parse(result[0].Team_1);
+  JSON.parse(result[0].Team_2);
+  result[0].Free_Agent;
+  result[0].Roster_name;
+
+  $("#teamone-list").text("");
+  $("#teamtwo-list").text("");
+  $("#loneplayer").text("");
+
+
+  console.log(firstTeam);
+
+  for (i = 0; i < firstTeam.length; i++) {
+    let player = firstTeam[i];
+    let newLi = $("<li>");
+    newLi.text(player);
+    $("#teamone-list").append(newLi);
+    // oneForSql.push(playerBox);
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   });
 });
 
