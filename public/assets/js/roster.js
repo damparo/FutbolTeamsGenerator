@@ -124,6 +124,11 @@ $("#randomteams").click(function () {
 let cage = [];
 
 // Send POST request to save teams in MySQL database
+$("#roster-name").keypress(function (event) {
+  if (event.which == "13") {
+    event.preventDefault();
+  }
+});
 
 $("#saveteams").click(function (event) {
   event.preventDefault();
@@ -132,6 +137,7 @@ $("#saveteams").click(function (event) {
   console.log(oneForSql);
   console.log(twoForSql);
   console.log(freeForSql);
+
 
   rosterTitle.push($("#roster-name").val().trim());
 
@@ -195,6 +201,8 @@ let package = [];
 
 $("#button-row").on("click", ".grab-rostername", function (event) {
   event.preventDefault();
+  rosterField = [];
+
   let clickRoster = $(this).attr("data-index");
   console.log(clickRoster);
   // const titleTeams =  clickRoster;
@@ -207,43 +215,52 @@ $("#button-row").on("click", ".grab-rostername", function (event) {
   $.ajax("/api/teams/" + nameQuery, {
     type: "GET",
   }).then(function (result) {
-    console.log( JSON.parse(result[0].Team_1));
+    console.log(JSON.parse(result[0].Team_1));
 
     const firstTeam = JSON.parse(result[0].Team_1);
-  // JSON.parse(result[0].Team_1);
-  JSON.parse(result[0].Team_2);
-  result[0].Free_Agent;
-  result[0].Roster_name;
+    const secondTeam = JSON.parse(result[0].Team_2);
+    // JSON.parse(result[0].Team_1);
+    // JSON.parse(result[0].Team_2);
+    const lonePlayer = result[0].Free_Agent;
+    result[0].Roster_name;
 
+    $("#teamone-list").text("");
+    $("#teamtwo-list").text("");
+    $("#loneplayer").text("");
+
+    console.log(firstTeam);
+
+    for (i = 0; i < firstTeam.length; i++) {
+      let player = firstTeam[i];
+      let newLi = $("<li>");
+      newLi.text(player);
+      $("#teamone-list").append(newLi);
+      $("#roster-list").text("");
+      // oneForSql.push(playerBox);
+    }
+
+    for (i = 0; i < secondTeam.length; i++) {
+      let player = secondTeam[i];
+      let newLi = $("<li>");
+      newLi.text(player);
+      $("#teamtwo-list").append(newLi);
+      $("#roster-list").text("");
+      // oneForSql.push(playerBox);
+    }
+
+    $("#loneplayer").append(lonePlayer);
+  });
+});
+
+$("#anew").click(function (event) {
+  event.preventDefault();
+
+  rosterField = [];
+
+  $("#roster-list").text("");
   $("#teamone-list").text("");
   $("#teamtwo-list").text("");
   $("#loneplayer").text("");
-
-
-  console.log(firstTeam);
-
-  for (i = 0; i < firstTeam.length; i++) {
-    let player = firstTeam[i];
-    let newLi = $("<li>");
-    newLi.text(player);
-    $("#teamone-list").append(newLi);
-    // oneForSql.push(playerBox);
-  }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  });
 });
 
 //   //   // displayTeams();
