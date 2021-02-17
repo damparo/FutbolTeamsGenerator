@@ -13,13 +13,13 @@ const app = express();
 // });
 
 // app.use(express.static("/public"));
-app.use("/public", express.static("public"))
 
 // Parse application body as JSON
 // middleware - backend
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+app.use("/public", express.static("public"))
 // Set Handlebars.
 const exphbs = require("express-handlebars");
 
