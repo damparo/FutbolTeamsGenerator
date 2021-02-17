@@ -7,6 +7,10 @@ const router = express.Router();
 
 const futbol = require("../models/futbol");
 
+router.get("/", function (req, res) {
+  res.render("home");
+});
+
 router.get("/home", function (req, res) {
   res.render("home");
 });
