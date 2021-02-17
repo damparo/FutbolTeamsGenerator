@@ -8,7 +8,7 @@ if (process.env.JAWSDB_URL) {
 } else {
   connection = mysql.createConnection({
       host: "localhost",
-      port: 3306,
+      port: 3300,
       user: "root",
       password: "",
       database: "futbol_roster_db",
@@ -19,7 +19,7 @@ if (process.env.JAWSDB_URL) {
 
 // const connection = mysql.createConnection({
 //   host: "localhost",
-//   port: 3306,
+//   port: 3300,
 //   user: "root",
 //   password: "",
 //   database: "futbol_roster_db",
