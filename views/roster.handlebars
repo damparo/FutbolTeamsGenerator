@@ -8,8 +8,14 @@
             <form id="roster-form" method="POST">
 
 
-                <h5 id="addplayer">Add Player</h5>
-                <input type="text" placeholder="Player Name" name="roster-player" id="roster-creation" />
+                <h5 id="addplayer">
+
+
+
+                    <i class="fas fa-plus" style="color:black;"></i>
+                    PLAYER
+                </h5>
+                <input type="text" placeholder=" Player Name" name="roster-player" id="roster-creation" />
 
             </form>
 
@@ -23,21 +29,21 @@
 
             <form id="rostername-form" method="POST">
 
-                <h5 id="rosterTitle">Roster Name:</h5>
-                <input type="text" placeholder="Roster Name" name="roster-name" id="roster-name" />
+                <h5 id="rosterTitle">ROSTER NAME:</h5>
+                <input type="text" placeholder=" Roster Name" name="roster-name" id="roster-name" />
 
-                <button type="button" class="btn col-12" id="saveteams">
-                    Save Roster
-                </button>
 
 
             </form>
 
-            <div id="button-row">
+                <button type="button" class="btn col-12" id="saveteams">
+                    Save Roster
+                </button>
+            {{!-- <div id="button-row">
 
-            </div>
+            </div> --}}
 
-            <button type="button" class="btn btn-outline-dark clear" id="anew">Clear Players</button>
+            <button type="button" class="btn btn-dark clear" id="anew">Clear Players</button>
 
 
 
@@ -45,7 +51,7 @@
 
         <div class="col-md-3 ">
 
-            <h4 id="title">Player Pool</h4>
+            <h4 id="title">PLAYER POOL</h4>
 
             <ol id="roster-list"></ol>
 
@@ -57,7 +63,7 @@
             <div class="row">
                 <div class="col borderres">
 
-                    <h4 id="team1" class="zenter">Team 1</h4>
+                    <h4 id="team1" class="zenter">TEAM 1</h4>
 
                     <ol id="teamone-list"></ol>
 
@@ -69,7 +75,7 @@
                 <div class="col borderres">
 
 
-                    <h4 id="team2" class="zenter">Team 2</h4>
+                    <h4 id="team2" class="zenter">TEAM 2</h4>
 
                     <ol id="teamtwo-list"></ol>
 
