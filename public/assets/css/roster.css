@@ -105,6 +105,11 @@ input[type="text"] {
   border: 2.5px solid black;
 }
 
+
+#button-row{
+  margin-top: 20px;
+}
+
 .clear {
   margin-top: 20px;
   text-align: center;
