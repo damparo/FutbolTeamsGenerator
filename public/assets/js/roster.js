@@ -61,6 +61,9 @@ function manyPlayers() {
 //following code is to generate teams, sort players into teams and if necessary Free Agent
 
 $("#randomteams").click(function () {
+
+  $(".content").show();
+
   let freeAgent = [];
   let oneTeam = rosterField.concat(freeAgent);
 

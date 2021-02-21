@@ -1,6 +1,6 @@
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-3 align-items-center">
+        <div class="col-md-4 align-items-center">
 
 
 
@@ -12,8 +12,8 @@
 
 
 
-                    <i class="fas fa-plus" style="color:black;"></i>
-                    PLAYER
+                    {{!-- <i class="fas fa-plus" style="color:black;"></i> --}}
+                    ADD PLAYER
                 </h5>
                 <input type="text" placeholder=" Player Name" name="roster-player" id="roster-creation" />
 
@@ -22,44 +22,23 @@
 
             <p id="numplayers"># of Players: <span id="player-count">0</span></p>
 
+
+            <h4 id="title">PLAYER POOL</h4>
+
+
+            <ol id="roster-list"></ol>
             <button type="button" class="btn col-12" id="randomteams">
                 Generate Teams
             </button>
 
 
-            <form id="rostername-form" method="POST">
 
-                <h5 id="rosterTitle">ROSTER NAME:</h5>
-                <input type="text" placeholder=" Roster Name" name="roster-name" id="roster-name" />
-
-
-
-            </form>
-
-                <button type="button" class="btn col-12" id="saveteams">
-                    Save Roster
-                </button>
-            <div id="button-row">
-
-            </div>
-
-            <button type="button" class="btn btn-dark clear" id="anew">Clear Players</button>
 
 
 
         </div>
 
-        <div class="col-md-3 ">
-
-            <h4 id="title">PLAYER POOL</h4>
-
-            <ol id="roster-list"></ol>
-
-        </div>
-
-
-
-        <div class="col col-md-3 ">
+        <div class="col-md-4 content" id="show">
             <div class="row">
                 <div class="col borderres">
 
@@ -82,15 +61,45 @@
 
                 </div>
             </div>
+
+            <div class="row">
+                <div class="col">
+                    <h4 id="freeagent" class="zenter">Free Agent</h4>
+
+                    <ol id="loneplayer"></ol>
+                </div>
+
+            </div>
+
         </div>
 
 
 
-        <div class="col-md-3  borderres">
 
-            <h4 id="freeagent" class="zenter">Free Agent</h4>
 
-            <ol id="loneplayer"></ol>
+
+        <div class="col-md-4  content" id="show">
+
+
+
+
+            <form id="rostername-form" method="POST">
+
+                <h5 id="rosterTitle">ROSTER NAME:</h5>
+                <input type="text" placeholder=" Roster Name" name="roster-name" id="roster-name" />
+
+
+
+            </form>
+
+            <button type="button" class="btn col-12" id="saveteams">
+                Save Roster
+            </button>
+            <div id="button-row">
+
+            </div>
+
+            <button type="button" class="btn btn-dark clear" id="anew">Clear Players</button>
 
         </div>
 

@@ -5,7 +5,7 @@ body {
 
 .navbar {
   background-color: black;
-  border-bottom: 3px solid #f0ad4e;
+  /* border-bottom: 3px solid #f0ad4e; */
 }
 
 .container {

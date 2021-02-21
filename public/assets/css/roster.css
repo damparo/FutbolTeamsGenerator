@@ -12,6 +12,10 @@ body {
   margin-top: 15vh;
 }
 
+.content{
+  display: none;
+}
+
 #title {
   padding: 10px;
   color: black;
@@ -35,7 +39,7 @@ body {
 }
 #rostername-form {
   text-align: center;
-  margin-top: 20px;
+  /* margin-top: 20px; */
   margin-bottom: 20px;
 }
 input {
