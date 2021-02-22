@@ -6,6 +6,7 @@ let oneForSql = [];
 let twoForSql = [];
 let freeForSql = [];
 let rosterTitle = [];
+$(".content").hide();
 
 // savedTeam();
 manyPlayers();
