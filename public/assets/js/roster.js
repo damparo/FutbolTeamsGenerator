@@ -184,9 +184,9 @@ function buttonNames() {
     btnBtn.text(cage[i]);
     btnBtn.attr("data-index", cage[i]);
     btnBtn.css({
-      color: "white",
+      color: "black",
       "text-align": "center",
-      "background-color": "black",
+      "background-color": "yellow",
       padding: "10px",
       "padding-left": "15px",
       "border-style": "solid",
@@ -259,7 +259,7 @@ $("#anew").click(function (event) {
   event.preventDefault();
 
   rosterField = [];
-
+  $(".content").hide();
   $("#roster-list").text("");
   $("#teamone-list").text("");
   $("#teamtwo-list").text("");
