@@ -7,12 +7,21 @@ let twoForSql = [];
 let freeForSql = [];
 let rosterTitle = [];
 $(".content").hide();
-
+$("#player-count").hide();
+$("#numplayers").hide();
+$("#title").hide();
+$("#randomteams").hide();
 // savedTeam();
 manyPlayers();
 
 $("#roster-form").submit(function (event) {
   event.preventDefault();
+  // $(".content").hide();
+$("#player-count").show();
+$("#numplayers").show();
+$("#title").show();
+$("#randomteams").show();
+
   let rosterText = $("#roster-creation").val().trim().toLowerCase();
 
   rosterText.charAt(0).toUpperCase();
