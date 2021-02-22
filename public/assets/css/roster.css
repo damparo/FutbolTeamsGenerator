@@ -9,8 +9,17 @@ body {
 .container {
   cursor: default;
   background-color: white;
-  margin-top: 15vh;
+  margin-top: 18vh;
 }
+
+@media screen and (min-width: 400px){
+
+  .container{
+    margin-top: 0vh;
+
+  }
+}
+
 
 .content{
   display: none;
@@ -19,7 +28,7 @@ body {
 #title {
   padding: 10px;
   color: black;
-  font-size: 25px;
+  font-size: 20px;
   text-align: center;
   border-bottom: 1.5px solid black;
 }
@@ -27,6 +36,7 @@ body {
 #addplayer {
   text-align: left;
   color: black;
+  /* margin-bottom: 5px; */
   /* font-size: 30px; */
 }
 
@@ -43,7 +53,7 @@ body {
   margin-bottom: 20px;
 }
 input {
-  border: solid 2px black;
+  border: solid 1.5px black;
   width: 100%;
   border-radius: 10px;
   height: 35px;
@@ -70,9 +80,10 @@ input[type="text"] {
   list-style: none;
 
   color: black;
-  font-weight: bolder;
+  /* font-weight: bold; */
 
   padding: 10px;
+  margin-left: 25px;
 }
 
 #whitebreak {
@@ -81,11 +92,13 @@ input[type="text"] {
 }
 
 #randomteams {
+
   color: white;
   /* background-color: #55ac55; */
   background-color: rgb(23, 23, 230);
   border: 2px solid black;
   /* width: 180px; */
+  margin-bottom: 15px;
 }
 
 #randomteams:hover {
@@ -121,7 +134,7 @@ input[type="text"] {
 }
 
 .zenter {
-  font-size: 25px;
+  font-size: 20px;
   padding: 10px;
   text-align: center;
   color: rgb(23, 23, 230);
@@ -154,3 +167,7 @@ ol {
   color: white;
   border: 2.5px solid #f0ad4e;
 } */
+
+.backcolor{
+  /* background-color: rgb(216, 32, 32); */
+}
