@@ -15,7 +15,7 @@ body {
 @media screen and (max-width: 450px){
 
   .container{
-    margin-top: 4vh;
+    margin-top: 6vh;
 
   }
 };
@@ -30,11 +30,11 @@ body {
   color: #BB090F;
   font-size: 20px;
   text-align: center;
-  border-bottom: 1.5px solid black;
+  /* border-bottom: 1.5px solid black; */
 }
 
 #addplayer {
-  text-align: left;
+  text-align: center;
   color: black;
   /* margin-bottom: 5px; */
   /* font-size: 30px; */
@@ -45,7 +45,7 @@ body {
 }
 
 #rosterTitle {
-  text-align: left;
+  text-align: center;
 }
 #rostername-form {
   text-align: center;
@@ -54,7 +54,7 @@ body {
 }
 input {
   border: solid 1.5px black;
-  width: 100%;
+  width: 65%;
   border-radius: 10px;
   height: 35px;
   text-align: center;
@@ -92,12 +92,13 @@ input[type="text"] {
 }
 
 #randomteams {
-
+  text-align: center;
   color: white;
   /* background-color: #55ac55; */
   background-color: #38a666;
   /* border: 1.5px solid black; */
-  /* width: 180px; */
+  width: 60%;
+  margin-left: 20%;
   margin-bottom: 20px;
   
 }
@@ -114,6 +115,8 @@ input[type="text"] {
   /* background-color: #55ac55; */
   background-color: #FFBB00;
   /* border: 1.5px solid black; */
+  width: 60%;
+  margin-left: 20%;
 }
 
 #saveteams:hover {
@@ -134,6 +137,8 @@ input[type="text"] {
   margin-bottom: 20px;
   color: white;
   background-color: black;
+  width: 60%;
+  margin-left: 20%;
 }
 
 .zenter {
