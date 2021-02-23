@@ -19,18 +19,18 @@
   color: black;
 }
 .colorstripA {
-  margin-top: 55px;
+  margin-top: 50px;
 
-  border: black solid 8px;
+  border: black solid 6px;
 }
 .colorstripB {
-  border: red solid 8px;
+  border: red solid 6px;
 }
 .colorstripC {
-  border: orange solid 8px;
+  border: orange solid 6px;
 }
 .colorstripD {
-  border: yellow solid 8px;
+  border: yellow solid 6px;
 }
 
 
