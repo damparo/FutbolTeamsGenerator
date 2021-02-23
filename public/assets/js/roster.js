@@ -6,7 +6,8 @@ let oneForSql = [];
 let twoForSql = [];
 let freeForSql = [];
 let rosterTitle = [];
-$(".content").hide();
+$(".content1").hide();
+$(".content2").hide();
 $("#player-count").hide();
 $("#numplayers").hide();
 $("#title").hide();
@@ -72,8 +73,8 @@ function manyPlayers() {
 
 $("#randomteams").click(function () {
 
-  $(".content").show();
-
+  $(".content1").show();
+  $(".content2").show();
   let freeAgent = [];
   let oneTeam = rosterField.concat(freeAgent);
 
@@ -194,10 +195,10 @@ function buttonNames() {
     btnBtn.text(cage[i]);
     btnBtn.attr("data-index", cage[i]);
     btnBtn.css({
-      color: "black",
+      "color": "white",
       "text-align": "center",
-      "background-color": "yellow",
-      padding: "10px",
+      "background-color": "#BB090F",
+      "padding": "10px",
       "padding-left": "15px",
       "border-style": "solid",
       "border-width": "thin",
@@ -218,7 +219,7 @@ $("#button-row").on("click", ".grab-rostername", function (event) {
 
   let clickRoster = $(this).attr("data-index");
   console.log(clickRoster);
-  // const titleTeams =  clickRoster;
+
 
   const nameQuery = clickRoster;
   console.log(nameQuery);
@@ -232,8 +233,7 @@ $("#button-row").on("click", ".grab-rostername", function (event) {
 
     const firstTeam = JSON.parse(result[0].Team_1);
     const secondTeam = JSON.parse(result[0].Team_2);
-    // JSON.parse(result[0].Team_1);
-    // JSON.parse(result[0].Team_2);
+
     const lonePlayer = result[0].Free_Agent;
     result[0].Roster_name;
 
@@ -249,7 +249,7 @@ $("#button-row").on("click", ".grab-rostername", function (event) {
       newLi.text(player);
       $("#teamone-list").append(newLi);
       $("#roster-list").text("");
-      // oneForSql.push(playerBox);
+ 
     }
 
     for (i = 0; i < secondTeam.length; i++) {
@@ -258,7 +258,7 @@ $("#button-row").on("click", ".grab-rostername", function (event) {
       newLi.text(player);
       $("#teamtwo-list").append(newLi);
       $("#roster-list").text("");
-      // oneForSql.push(playerBox);
+    
     }
 
     $("#loneplayer").append(lonePlayer);
@@ -269,31 +269,12 @@ $("#anew").click(function (event) {
   event.preventDefault();
 
   rosterField = [];
-  $(".content").hide();
+ 
   $("#roster-list").text("");
   $("#teamone-list").text("");
   $("#teamtwo-list").text("");
   $("#loneplayer").text("");
+  $(".content1").hide();
 });
 
-//   //   // displayTeams();
 
-//   //   function displayTeams() {
-//   //     // clear present data in T1, T2, FA;
-//   //     $("#roster-creation").val("");
-//   //     $("#teamone-list").text("");
-//   //     $("#teamtwo-list").text("");
-//   //     $("#loneplayer").text("");
-
-//   //     //parse the data from database;
-
-//   //     //append this data to T1, T2
-//   //     if (oneTeam.length % 2 !== 0) {
-//   //       let hmm = oneTeam.pop();
-//   //       freeAgent.push(hmm);
-//   //       $("#loneplayer").append(freeAgent);
-//   //       freeForSql.push(hmm);
-//   //     };
-//   //   };
-//   // });
-// });

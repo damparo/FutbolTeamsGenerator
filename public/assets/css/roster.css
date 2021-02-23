@@ -9,7 +9,7 @@ body {
 .container {
   cursor: default;
   background-color: white;
-  margin-top: 18vh;
+  margin-top: 12vh;
 }
 
 @media screen and (max-width: 450px){
@@ -21,12 +21,15 @@ body {
 };
 
 
-.content{
+.content1{
+  display: none;
+}
+.content2{
   display: none;
 }
 
 #title {
-  padding: 10px;
+  /* padding: 10px; */
   color: #BB090F;
   font-size: 20px;
   text-align: center;
@@ -68,7 +71,8 @@ input[type="text"] {
   margin-top: 10px;
   color: black;
   text-align: center;
-  font-size: 20px;
+  font-size: 12px;
+  font-weight: bold;
 }
 
 #player-count {
@@ -82,7 +86,7 @@ input[type="text"] {
   color: black;
   /* font-weight: bold; */
 
-  padding: 10px;
+  /* padding: 10px; */
   margin-left: 25px;
 }
 
@@ -111,7 +115,7 @@ input[type="text"] {
 }
 
 #saveteams {
-  color: black;
+  color: white;
   /* background-color: #55ac55; */
   background-color: #FFBB00;
   /* border: 1.5px solid black; */
@@ -129,12 +133,13 @@ input[type="text"] {
 
 #button-row{
   margin-top: 20px;
+  text-align: center;
 }
 
-.clear {
+.clear1 {
   margin-top: 20px;
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 70px;
   color: white;
   background-color: black;
   width: 60%;
