@@ -23,9 +23,11 @@ body {
 
 .content1{
   display: none;
+  margin-bottom: 45px;
 }
 .content2{
   display: none;
+  margin-bottom: 45px;
 }
 
 #title {
@@ -103,7 +105,7 @@ input[type="text"] {
   /* border: 1.5px solid black; */
   width: 60%;
   margin-left: 20%;
-  margin-bottom: 20px;
+  /* margin-bottom: 45px; */
   
 }
 
@@ -151,6 +153,7 @@ input[type="text"] {
   /* padding: 10px; */
   text-align: center;
   color: #BB090F;
+  /* margin-bottom: 4px; */
   /* border-bottom: 1.5px solid black; */
 }
 
@@ -181,5 +184,5 @@ ol {
 } */
 
 .backcolor{
-  /* background-color: rgb(216, 32, 32); */
+margin-bottom: 45px;
 }
