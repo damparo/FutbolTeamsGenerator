@@ -1,48 +1,34 @@
-body {
-  background: white;
-}
-
-.navbar {
-  /* background-color: black; */
-  /* border-bottom: 3px solid #f0ad4e; */
-}
 .container {
   cursor: default;
-  background-color: white;
+  background-color: transparent;
   margin-top: 12vh;
 }
 
-@media screen and (max-width: 450px){
-
-  .container{
+@media screen and (max-width: 450px) {
+  .container {
     margin-top: 6vh;
-
   }
-};
+}
 
-
-.content1{
+.content1 {
   display: none;
   margin-bottom: 45px;
 }
-.content2{
+.content2 {
   display: none;
   margin-bottom: 45px;
 }
 
 #title {
-  /* padding: 10px; */
-  color: #BB090F;
+  color: #faf73f;
+  /* color: #bb090f; */
   font-size: 20px;
   text-align: center;
-  /* border-bottom: 1.5px solid black; */
 }
 
 #addplayer {
   text-align: center;
-  color: black;
-  /* margin-bottom: 5px; */
-  /* font-size: 30px; */
+  color: white;
 }
 
 #roster-form {
@@ -51,10 +37,11 @@ body {
 
 #rosterTitle {
   text-align: center;
+  color: white;
 }
 #rostername-form {
   text-align: center;
-  /* margin-top: 20px; */
+
   margin-bottom: 20px;
 }
 input {
@@ -71,24 +58,22 @@ input[type="text"] {
 
 #numplayers {
   margin-top: 10px;
-  color: black;
+  color: white;
   text-align: center;
   font-size: 12px;
   font-weight: bold;
 }
 
 #player-count {
-  color: black;
+  color: white;
 }
 
 #roster-list {
   font-size: 25px;
   list-style: none;
 
-  color: black;
-  /* font-weight: bold; */
+  color: white;
 
-  /* padding: 10px; */
   margin-left: 25px;
 }
 
@@ -100,27 +85,26 @@ input[type="text"] {
 #randomteams {
   text-align: center;
   color: white;
-  /* background-color: #55ac55; */
+
   background-color: #38a666;
-  /* border: 1.5px solid black; */
+
   width: 60%;
   margin-left: 20%;
-  /* margin-bottom: 45px; */
-  
+  margin-bottom: 40px;
 }
 
 #randomteams:hover {
   background-color: white;
   color: black;
-  /* border: 2.5px solid #55ac55; */
+
   border: 1.5px solid black;
 }
 
 #saveteams {
   color: white;
-  /* background-color: #55ac55; */
-  background-color: #FFBB00;
-  /* border: 1.5px solid black; */
+
+  background-color: #ffbb00;
+
   width: 60%;
   margin-left: 20%;
 }
@@ -128,12 +112,11 @@ input[type="text"] {
 #saveteams:hover {
   background-color: white;
   color: black;
-  /* border: 2.5px solid #55ac55; */
+
   border: 1.5px solid black;
 }
 
-
-#button-row{
+#button-row {
   margin-top: 20px;
   text-align: center;
 }
@@ -150,39 +133,18 @@ input[type="text"] {
 
 .zenter {
   font-size: 20px;
-  /* padding: 10px; */
+
   text-align: center;
-  color: #BB090F;
-  /* margin-bottom: 4px; */
-  /* border-bottom: 1.5px solid black; */
+  color: #faf73f;
 }
 
 ol {
   list-style: none;
   font-size: larger;
-  color: black;
+  color: white;
   font-size: 25px;
-  /* font-weight:lighter; */
 
   padding-inline-start: 10px;
 
   text-align: center;
-  /* padding: 10px; */
-}
-
-/* #playerview {
-  margin-top: 15px;
-  margin-bottom: 15px;
-
-  color: black;
-  border: 2px solid black;
-}
-#playerview:hover {
-  background-color: black;
-  color: white;
-  border: 2.5px solid #f0ad4e;
-} */
-
-.backcolor{
-margin-bottom: 45px;
 }
