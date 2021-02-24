@@ -21,16 +21,16 @@
 .colorstripA {
   margin-top: 50px;
 
-  border: black solid 6px;
+  border: black solid 4px;
 }
 .colorstripB {
-  border: red solid 6px;
+  border: red solid 4px;
 }
 .colorstripC {
-  border: orange solid 6px;
+  border: orange solid 4px;
 }
 .colorstripD {
-  border: yellow solid 6px;
+  border: yellow solid 4px;
 }
 
 
