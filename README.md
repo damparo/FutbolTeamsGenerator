@@ -10,21 +10,25 @@ Created using Adobe XD, click [here](https://xd.adobe.com/view/68f3432b-e504-429
 
 ## Getting Started
 
-<!-- Application runs in browser, no installation or download needed.
+Application runs in browser, no installation or download needed.
 
-Link to [project](https://damparo.github.io/ExploreAZ/) -->
+Link to [project](https://futbolteammanager.herokuapp.com/)
 
 ## Built With
 
-<!-- UX/UI - Adobe XD <br>
-HTML <br>
-CSS Framework - Materialize <br>
-JavaScript <br> -->
+UX/UI - Adobe XD <br>
+Handlebars<br>
+CSS Framework - Bootstrap <br>
+JavaScript <br>
+Node.js/Express <br>
+MySQL<br>
+
 
 ## Authors
 Dennis Amparo <br>
 
-<!-- See commit history [here](https://github.com/damparo/ExploreAZ/graphs/contributors). -->
+See commit history [here](https://github.com/damparo/FutbolTeamsGenerator/graphs/contributors).
 
 ## Planned Updates
-<!-- Future updates include replacing weather API, user creating accounts, and allowing a user to upload destinations to general map. -->
+Future updates include user accounts, update saving method, and update scoreboard 
+
