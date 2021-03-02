@@ -21,7 +21,7 @@
 
 #title {
   color: #faf73f;
-  /* color: #bb090f; */
+
   font-size: 20px;
   text-align: center;
 }
@@ -63,10 +63,6 @@ input[type="text"] {
   font-size: 15px;
   font-weight: bold;
 }
-
-/* #player-count {
-  color: white;
-} */
 
 #roster-list {
   font-size: 25px;

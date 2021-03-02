@@ -1,5 +1,3 @@
-// const { json } = require("express");
-
 // Add player to player pool code with delete feature (does not delete from database)
 let rosterField = [];
 let oneForSql = [];
@@ -12,16 +10,15 @@ $("#player-count").hide();
 $("#numplayers").hide();
 $("#title").hide();
 $("#randomteams").hide();
-// savedTeam();
 manyPlayers();
 
 $("#roster-form").submit(function (event) {
   event.preventDefault();
-  // $(".content").hide();
-$("#player-count").show();
-$("#numplayers").show();
-$("#title").show();
-$("#randomteams").show();
+
+  $("#player-count").show();
+  $("#numplayers").show();
+  $("#title").show();
+  $("#randomteams").show();
 
   let rosterText = $("#roster-creation").val().trim().toLowerCase();
 
@@ -72,7 +69,6 @@ function manyPlayers() {
 //following code is to generate teams, sort players into teams and if necessary Free Agent
 
 $("#randomteams").click(function () {
-
   $(".content1").show();
   $(".content2").show();
   let freeAgent = [];
@@ -152,7 +148,6 @@ $("#saveteams").click(function (event) {
   console.log(twoForSql);
   console.log(freeForSql);
 
-
   rosterTitle.push($("#roster-name").val().trim());
 
   const teamOneObj = JSON.stringify(oneForSql);
@@ -183,11 +178,9 @@ $("#saveteams").click(function (event) {
   $("#roster-name").val("");
   rosterTitle = [];
   console.log(rosterTitle);
-  // event.preventDefault();
 });
 
 function buttonNames() {
-  // event.preventDefault();
   $("#button-row").text("");
 
   for (i = 0; i < cage.length; i++) {
@@ -195,10 +188,10 @@ function buttonNames() {
     btnBtn.text(cage[i]);
     btnBtn.attr("data-index", cage[i]);
     btnBtn.css({
-      "color": "white",
+      color: "white",
       "text-align": "center",
       "background-color": "#BB090F",
-      "padding": "10px",
+      padding: "10px",
       "padding-left": "15px",
       "border-style": "solid",
       "border-width": "thin",
@@ -220,7 +213,6 @@ $("#button-row").on("click", ".grab-rostername", function (event) {
   let clickRoster = $(this).attr("data-index");
   console.log(clickRoster);
 
-
   const nameQuery = clickRoster;
   console.log(nameQuery);
 
@@ -241,6 +233,8 @@ $("#button-row").on("click", ".grab-rostername", function (event) {
     $("#teamtwo-list").text("");
     $("#loneplayer").text("");
 
+    $(".content1").show();
+
     console.log(firstTeam);
 
     for (i = 0; i < firstTeam.length; i++) {
@@ -249,7 +243,6 @@ $("#button-row").on("click", ".grab-rostername", function (event) {
       newLi.text(player);
       $("#teamone-list").append(newLi);
       $("#roster-list").text("");
- 
     }
 
     for (i = 0; i < secondTeam.length; i++) {
@@ -258,7 +251,6 @@ $("#button-row").on("click", ".grab-rostername", function (event) {
       newLi.text(player);
       $("#teamtwo-list").append(newLi);
       $("#roster-list").text("");
-    
     }
 
     $("#loneplayer").append(lonePlayer);
@@ -269,12 +261,10 @@ $("#anew").click(function (event) {
   event.preventDefault();
 
   rosterField = [];
- 
+
   $("#roster-list").text("");
   $("#teamone-list").text("");
   $("#teamtwo-list").text("");
   $("#loneplayer").text("");
   $(".content1").hide();
 });
-
-

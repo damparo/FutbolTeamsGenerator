@@ -7,23 +7,13 @@ if (process.env.JAWSDB_URL) {
   connection = mysql.createConnection(process.env.JAWSDB_URL);
 } else {
   connection = mysql.createConnection({
-      host: "localhost",
-      user: "root",
-      password: "",
-      database: "futbol_roster_db",
-      multipleStatements: true,
-    
+    host: "localhost",
+    user: "root",
+    password: "",
+    database: "futbol_roster_db",
+    multipleStatements: true,
   });
-};
-
-// const connection = mysql.createConnection({
-//   host: "localhost",
-//   port: 3600,
-//   user: "root",
-//   password: "",
-//   database: "futbol_roster_db",
-//   multipleStatements: true,
-// });
+}
 
 // Make connection.
 connection.connect(function (err) {

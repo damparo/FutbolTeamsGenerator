@@ -1,19 +1,11 @@
-
-
-
-
-
-
 .space {
   margin-left: 1.5vw;
   margin-right: 1.5vw;
 }
 .select {
   height: 80px;
-
 }
 .col-2 {
-
   text-align: center;
   padding-left: 0px;
   padding-right: 0px;
@@ -25,13 +17,11 @@
 
 .digits,
 .teams {
- 
   align-content: center;
   text-align: center;
   border-top: 3px solid black;
   border-left: 3px solid black;
   border-right: 3px solid black;
-
 }
 
 .digits {
@@ -43,9 +33,9 @@ h3 {
 .font {
   font-family: "Graduate", cursive;
   font-size: 100px;
-  /* color: #f0ad4e; */
+  
   color: red;
-   -webkit-text-stroke-width: 2.0px;
+  -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: white;
 }
 .rightborder {
@@ -66,5 +56,4 @@ input[type="radio"] {
 
 .clear {
   margin-top: 50px;
- 
 }
