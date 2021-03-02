@@ -5,7 +5,7 @@ const router = express.Router();
 const futbol = require("../models/futbol");
 
 router.get("/", function (req, res) {
-  res.render("home");
+  res.render("login");
 });
 
 router.get("/home", function (req, res) {
@@ -15,6 +15,11 @@ router.get("/home", function (req, res) {
 router.get("/roster", function (req, res) {
   res.render("roster");
 });
+
+router.get("/thankyou", function (req, res) {
+  res.render("thankyou");
+});
+
 
 router.post("/api/teams", function (req, res) {
   futbol.create(
