@@ -4,29 +4,26 @@ const router = express.Router();
 
 const futbol = require("../models/futbol");
 
-const { auth } = require('express-openid-connect');
+// const { auth } = require('express-openid-connect');
 
-const { auth } = require('express-openid-connect');
 
-const config = {
-  authRequired: false,
-  auth0Logout: true,
-  secret: 'a long, randomly-generated string stored in env',
-  baseURL: 'https://futbolteammanager.herokuapp.com',
-  clientID: '4JrRvPaChuIjvribat41ve2wXpVerocQ',
-  issuerBaseURL: 'https://dev-n61n8s3c.us.auth0.com'
-};
+
+// const config = {
+//   authRequired: false,
+//   auth0Logout: true,
+//   secret: 'a long, randomly-generated string stored in env',
+//   baseURL: 'https://futbolteammanager.herokuapp.com',
+//   clientID: '4JrRvPaChuIjvribat41ve2wXpVerocQ',
+//   issuerBaseURL: 'https://dev-n61n8s3c.us.auth0.com'
+// };
 
 // auth router attaches /login, /logout, and /callback routes to the baseURL
-router.use(auth(config));
+// router.use(auth(config));
 
 // req.isAuthenticated is provided from the auth router
-router.get('/', (req, res) => {
-  res.send(req.oidc.isAuthenticated() ? 'Logged in' : 'Logged out');
-});
-
-
-
+// router.get('/', (req, res) => {
+//   res.send(req.oidc.isAuthenticated() ? 'Logged in' : 'Logged out');
+// });
 
 
 
