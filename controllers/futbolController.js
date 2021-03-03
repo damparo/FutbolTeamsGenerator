@@ -25,7 +25,9 @@ const futbol = require("../models/futbol");
 //   res.send(req.oidc.isAuthenticated() ? 'Logged in' : 'Logged out');
 // });
 
-
+router.get("/", function (req, res) {
+  res.render("home");
+});
 
 router.get("/welcome", function (req, res) {
   res.render("login");
