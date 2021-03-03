@@ -10,7 +10,7 @@ const config = {
   authRequired: false,
   auth0Logout: true,
   secret: 'a long, randomly-generated string stored in env',
-  baseURL: 'https://futbolteammanager.herokuapp.com',
+  baseURL: 'https://futbolteammanager.herokuapp.auth0.com',
   clientID: 'XXV9fR7qzdoADMUbczClHCb0tGakvfry',
   issuerBaseURL: 'https://dev-n61n8s3c.us.auth0.com'
 };
