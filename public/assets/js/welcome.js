@@ -2,7 +2,7 @@ const landingGif = $("#welcome");
 
 // Storing our giphy API URL for a random messi image
 // const queryURL =
-//   "https://api.giphy.com/v1/gifs/random?api_key=fNB3DLC6bFRFCtlcJ3MWYBuemtukLu5O&tag=fcbarcelona-messi-leo";
+//   'https://api.giphy.com/v1/gifs/random?api_key={process.env.APP_GIF_API_KEY}&tag=fcbarcelona-messi-leo';
 
 // Perfoming an AJAX GET request to our queryURL
 // $.ajax({
