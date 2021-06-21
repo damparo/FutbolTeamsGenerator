@@ -26,24 +26,24 @@ const futbol = require("../models/futbol");
 // });
 
 router.get("/", function (req, res) {
-  res.render("home");
+  res.render("roster");
 });
 
-router.get("/welcome", function (req, res) {
-  res.render("login");
-});
+// router.get("/welcome", function (req, res) {
+//   res.render("login");
+// });
 
-router.get("/home", function (req, res) {
-  res.render("home");
-});
+// router.get("/home", function (req, res) {
+//   res.render("home");
+// });
 
 router.get("/roster", function (req, res) {
   res.render("roster");
 });
 
-router.get("/thankyou", function (req, res) {
-  res.render("thankyou");
-});
+// router.get("/thankyou", function (req, res) {
+//   res.render("thankyou");
+// });
 
 
 router.post("/api/teams", function (req, res) {
