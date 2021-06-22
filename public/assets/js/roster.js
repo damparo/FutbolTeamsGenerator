@@ -134,134 +134,134 @@ $("#randomteams").click(function () {
 let cage = [];
 
 // Send POST request to save teams in MySQL database
-$("#roster-name").keypress(function (event) {
-  if (event.which == "13") {
-    event.preventDefault();
-  }
-});
+// $("#roster-name").keypress(function (event) {
+//   if (event.which == "13") {
+//     event.preventDefault();
+//   }
+// });
 
-$("#saveteams").click(function (event) {
-  event.preventDefault();
-  console.log("button is working");
+// $("#saveteams").click(function (event) {
+//   event.preventDefault();
+//   console.log("button is working");
 
-  console.log(oneForSql);
-  console.log(twoForSql);
-  console.log(freeForSql);
+//   console.log(oneForSql);
+//   console.log(twoForSql);
+//   console.log(freeForSql);
 
-  rosterTitle.push($("#roster-name").val().trim());
+//   rosterTitle.push($("#roster-name").val().trim());
 
-  const teamOneObj = JSON.stringify(oneForSql);
-  console.log(teamOneObj);
+//   const teamOneObj = JSON.stringify(oneForSql);
+//   console.log(teamOneObj);
 
-  const teamTwoObj = JSON.stringify(twoForSql);
-  console.log(teamTwoObj);
+//   const teamTwoObj = JSON.stringify(twoForSql);
+//   console.log(teamTwoObj);
 
-  const teamInfo = {
-    rosterName: rosterTitle,
-    team1: teamOneObj,
-    team2: teamTwoObj,
-    freeAgent: freeForSql,
-  };
+//   const teamInfo = {
+//     rosterName: rosterTitle,
+//     team1: teamOneObj,
+//     team2: teamTwoObj,
+//     freeAgent: freeForSql,
+//   };
 
-  $.ajax("/api/teams", {
-    type: "POST",
-    data: teamInfo,
-  }).then(function () {
-    console.log("teams saved!");
-  });
+//   $.ajax("/api/teams", {
+//     type: "POST",
+//     data: teamInfo,
+//   }).then(function () {
+//     console.log("teams saved!");
+//   });
 
-  // hitting save also creates a button with the roster name.
-  cage.push($("#roster-name").val().trim());
+//   // hitting save also creates a button with the roster name.
+//   cage.push($("#roster-name").val().trim());
 
-  buttonNames();
+//   buttonNames();
 
-  $("#roster-name").val("");
-  rosterTitle = [];
-  console.log(rosterTitle);
-});
+//   $("#roster-name").val("");
+//   rosterTitle = [];
+//   console.log(rosterTitle);
+// });
 
-function buttonNames() {
-  $("#button-row").text("");
+// function buttonNames() {
+//   $("#button-row").text("");
 
-  for (i = 0; i < cage.length; i++) {
-    let btnBtn = $("<button>");
-    btnBtn.text(cage[i]);
-    btnBtn.attr("data-index", cage[i]);
-    btnBtn.css({
-      color: "white",
-      "text-align": "center",
-      "background-color": "#BB090F",
-      padding: "10px",
-      "padding-left": "15px",
-      "border-style": "solid",
-      "border-width": "thin",
-    });
-    btnBtn.addClass("grab-rostername");
+//   for (i = 0; i < cage.length; i++) {
+//     let btnBtn = $("<button>");
+//     btnBtn.text(cage[i]);
+//     btnBtn.attr("data-index", cage[i]);
+//     btnBtn.css({
+//       color: "white",
+//       "text-align": "center",
+//       "background-color": "#BB090F",
+//       padding: "10px",
+//       "padding-left": "15px",
+//       "border-style": "solid",
+//       "border-width": "thin",
+//     });
+//     btnBtn.addClass("grab-rostername");
 
-    $("#button-row").append(btnBtn);
-  }
-}
+//     $("#button-row").append(btnBtn);
+//   }
+// }
 
-// Clicking on roster buttons, GET request, to retrieve rosters and populate fields
+// // Clicking on roster buttons, GET request, to retrieve rosters and populate fields
 
-let package = [];
+// let package = [];
 
-$("#button-row").on("click", ".grab-rostername", function (event) {
-  event.preventDefault();
-  rosterField = [];
+// $("#button-row").on("click", ".grab-rostername", function (event) {
+//   event.preventDefault();
+//   rosterField = [];
 
-  let clickRoster = $(this).attr("data-index");
-  console.log(clickRoster);
+//   let clickRoster = $(this).attr("data-index");
+//   console.log(clickRoster);
 
-  const nameQuery = clickRoster;
-  console.log(nameQuery);
+//   const nameQuery = clickRoster;
+//   console.log(nameQuery);
 
-  // want to be able to grab name from button, and use that to retrieve roster from database
+//   // want to be able to grab name from button, and use that to retrieve roster from database
 
-  $.ajax("/api/teams/" + nameQuery, {
-    type: "GET",
-  }).then(function (result) {
-    console.log(JSON.parse(result[0].Team_1));
+//   $.ajax("/api/teams/" + nameQuery, {
+//     type: "GET",
+//   }).then(function (result) {
+//     console.log(JSON.parse(result[0].Team_1));
 
-    const firstTeam = JSON.parse(result[0].Team_1);
-    const secondTeam = JSON.parse(result[0].Team_2);
+//     const firstTeam = JSON.parse(result[0].Team_1);
+//     const secondTeam = JSON.parse(result[0].Team_2);
 
-    const lonePlayer = result[0].Free_Agent;
-    result[0].Roster_name;
+//     const lonePlayer = result[0].Free_Agent;
+//     result[0].Roster_name;
 
-    $("#teamone-list").text("");
-    $("#teamtwo-list").text("");
-    $("#loneplayer").text("");
+//     $("#teamone-list").text("");
+//     $("#teamtwo-list").text("");
+//     $("#loneplayer").text("");
 
-    $(".content1").show();
+//     $(".content1").show();
 
-    console.log(firstTeam);
+//     console.log(firstTeam);
 
-    for (i = 0; i < firstTeam.length; i++) {
-      let player = firstTeam[i];
-      let newLi = $("<li>");
-      newLi.text(player);
-      $("#teamone-list").append(newLi);
-      $("#roster-list").text("");
-    }
+//     for (i = 0; i < firstTeam.length; i++) {
+//       let player = firstTeam[i];
+//       let newLi = $("<li>");
+//       newLi.text(player);
+//       $("#teamone-list").append(newLi);
+//       $("#roster-list").text("");
+//     }
 
-    for (i = 0; i < secondTeam.length; i++) {
-      let player = secondTeam[i];
-      let newLi = $("<li>");
-      newLi.text(player);
-      $("#teamtwo-list").append(newLi);
-      $("#roster-list").text("");
-    }
+//     for (i = 0; i < secondTeam.length; i++) {
+//       let player = secondTeam[i];
+//       let newLi = $("<li>");
+//       newLi.text(player);
+//       $("#teamtwo-list").append(newLi);
+//       $("#roster-list").text("");
+//     }
 
-    $("#loneplayer").append(lonePlayer);
-  });
-});
+//     $("#loneplayer").append(lonePlayer);
+//   });
+// });
 
 $("#anew").click(function (event) {
   event.preventDefault();
 
   rosterField = [];
-
+  $("#player-count").text(0);
   $("#roster-list").text("");
   $("#teamone-list").text("");
   $("#teamtwo-list").text("");

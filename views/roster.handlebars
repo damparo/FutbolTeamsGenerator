@@ -1,83 +1,71 @@
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-4 align-items-center backcolor">
+  <div class="row justify-content-center">
 
 
+    <div class="col-md-4 align-items-center backcolor">
+
+      {{!-- <div><p id="Footballmanager">FOOTBALL MANAGER</p></div> --}}
 
 
-            <form id="roster-form" method="POST">
+      <form id="roster-form" method="POST">
 
+        <h6 id="addplayer">
 
-                <h6 id="addplayer">
+          ADD PLAYER
+        </h6>
+        <input
+          type="text"
+          placeholder=" Player Name"
+          name="roster-player"
+          id="roster-creation"
+        />
 
+      </form>
 
-                    ADD PLAYER
-                </h6>
-                <input type="text" placeholder=" Player Name" name="roster-player" id="roster-creation" />
+      <p id="numplayers">PLAYER COUNT: <span id="player-count">0</span></p>
 
-            </form>
+      <h4 id="title">PLAYER POOL</h4>
 
+      <ol id="roster-list"></ol>
+      <button type="button" class="btn col-12" id="randomteams">
+        Generate Teams
+      </button>
 
-            <p id="numplayers">PLAYER COUNT: <span id="player-count">0</span></p>
+    </div>
 
+    <div class="col-md-4 content1 backcolor2" id="show">
 
-            <h4 id="title">PLAYER POOL</h4>
+      <div class="row">
+        <div class="col borderres">
 
+          <h4 id="team1" class="zenter">TEAM 1</h4>
 
-            <ol id="roster-list"></ol>
-            <button type="button" class="btn col-12" id="randomteams">
-                Generate Teams
-            </button>
-
-
-
-
-
-
-        </div>
-
-        <div class="col-md-4 content1 backcolor2" id="show">
-
-
-
-            <div class="row">
-                <div class="col borderres">
-
-                    <h4 id="team1" class="zenter">TEAM 1</h4>
-
-                    <ol id="teamone-list"></ol>
-
-
-                </div>
-
-                <div class="col borderres">
-
-
-                    <h4 id="team2" class="zenter">TEAM 2</h4>
-
-                    <ol id="teamtwo-list"></ol>
-
-
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col">
-                    <h4 id="freeagent" class="zenter">Free Agent</h4>
-
-                    <ol id="loneplayer"></ol>
-                </div>
-
-            </div>
+          <ol id="teamone-list"></ol>
 
         </div>
 
+        <div class="col borderres">
 
+          <h4 id="team2" class="zenter">TEAM 2</h4>
 
+          <ol id="teamtwo-list"></ol>
 
+        </div>
+      </div>
 
+      <div class="row">
+        <div class="col">
+          <h4 id="freeagent" class="zenter">Free Agent</h4>
 
-        <div class="col-md-4  content2 backcolor" id="show">
+          <ol id="loneplayer"></ol>
+        </div>
+
+      </div>
+
+      <button type="button" class="btn clear1" id="anew">Clear Players</button>
+    </div>
+
+    {{! <div class="col-md-4  content2 backcolor" id="show">
 
 
 
@@ -98,9 +86,8 @@
 
             </div>
 
-            <button type="button" class="btn clear1" id="anew">Clear Players</button>
 
-        </div>
+        </div> }}
 
-    </div>
+  </div>
 </div>
