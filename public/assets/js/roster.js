@@ -15,6 +15,7 @@ manyPlayers();
 $("#roster-form").submit(function (event) {
   event.preventDefault();
 
+  $("#messi").hide();
   $("#player-count").show();
   $("#numplayers").show();
   $("#title").show();
@@ -261,6 +262,7 @@ $("#anew").click(function (event) {
   event.preventDefault();
 
   rosterField = [];
+  $("#messi").show();
   $("#player-count").text(0);
   $("#roster-list").text("");
   $("#teamone-list").text("");

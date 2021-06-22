@@ -4,6 +4,8 @@ body {
 
 }
 
+
+
 #Footballmanager {
 
   color: yellow;
@@ -47,6 +49,13 @@ body {
 
 #roster-form {
   text-align: center;
+}
+
+#messi{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  
 }
 
 #rosterTitle {
