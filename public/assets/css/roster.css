@@ -178,3 +178,16 @@ ol {
 
   text-align: center;
 }
+
+#levelteams {
+
+margin-top: 5vh;
+
+
+}
+
+@media screen and (max-width: 450px) {
+  #levelteams {
+    margin-top: 0;
+  }
+}
