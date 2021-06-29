@@ -6,6 +6,10 @@
  background-size: cover;
  background-position:center center;
 } */
+
+.fbfutbol {
+  cursor: default;
+}
 .navbar {
   background-color: white;
  
@@ -13,6 +17,11 @@
 
 .navbar-light .navbar-toggler {
   border-color: transparent;
+}
+
+.navbar-collapse{
+
+  text-align: center;
 }
 
 .fa-bars {
