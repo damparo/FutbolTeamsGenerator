@@ -1,11 +1,9 @@
 <div class="container">
   <div class="row justify-content-center">
 
-
     <div class="col-md-4 align-items-center backcolor">
 
-      {{!-- <div><p id="Footballmanager">FOOTBALL MANAGER</p></div> --}}
-
+      {{! <div><p id="Footballmanager">FOOTBALL MANAGER</p></div> }}
 
       <form id="roster-form" method="POST">
 
@@ -22,7 +20,13 @@
 
       </form>
 
-      <img src="https://media.giphy.com/media/TjAcxImn74uoDYVxFl/giphy.gif" alt="messi" width="200px" height="200px" id="messi">
+      <img
+        src="https://media.giphy.com/media/TjAcxImn74uoDYVxFl/giphy.gif"
+        alt="messi"
+        width="200px"
+        height="200px"
+        id="messi"
+      />
 
       <p id="numplayers">PLAYER COUNT: <span id="player-count">0</span></p>
 
@@ -67,29 +71,28 @@
       <button type="button" class="btn clear1" id="anew">CLEAR PLAYERS</button>
     </div>
 
-    {{! <div class="col-md-4  content2 backcolor" id="show">
+    <div class="col-md-4 content2 backcolor" id="show">
 
+      <form id="rostername-form" method="POST">
 
+        <h6 id="rosterTitle">ROSTER NAME:</h6>
+        <input
+          type="text"
+          placeholder=" Roster Name"
+          name="roster-name"
+          id="roster-name"
+        />
 
+      </form>
 
-            <form id="rostername-form" method="POST">
+      <button type="button" class="btn col-12" id="saveteams">
+        Save Roster
+      </button>
+      {{!-- <div id="button-row">
 
-                <h6 id="rosterTitle">ROSTER NAME:</h6>
-                <input type="text" placeholder=" Roster Name" name="roster-name" id="roster-name" />
+      </div> --}}
 
-
-
-            </form>
-
-            <button type="button" class="btn col-12" id="saveteams">
-                Save Roster
-            </button>
-            <div id="button-row">
-
-            </div>
-
-
-        </div> }}
+    </div>
 
   </div>
 </div>

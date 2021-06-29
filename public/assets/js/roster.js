@@ -135,54 +135,55 @@ $("#randomteams").click(function () {
 let cage = [];
 
 // Send POST request to save teams in MySQL database
-// $("#roster-name").keypress(function (event) {
-//   if (event.which == "13") {
-//     event.preventDefault();
-//   }
-// });
+$("#roster-name").keypress(function (event) {
+  if (event.which == "13") {
+    event.preventDefault();
+  }
+});
 
-// $("#saveteams").click(function (event) {
-//   event.preventDefault();
-//   console.log("button is working");
+$("#saveteams").click(function (event) {
+  event.preventDefault();
+  console.log("button is working");
 
-//   console.log(oneForSql);
-//   console.log(twoForSql);
-//   console.log(freeForSql);
+  console.log(oneForSql);
+  console.log(twoForSql);
+  console.log(freeForSql);
 
-//   rosterTitle.push($("#roster-name").val().trim());
+  rosterTitle.push($("#roster-name").val().trim());
 
-//   const teamOneObj = JSON.stringify(oneForSql);
-//   console.log(teamOneObj);
+  const teamOneObj = JSON.stringify(oneForSql);
+  console.log(teamOneObj);
 
-//   const teamTwoObj = JSON.stringify(twoForSql);
-//   console.log(teamTwoObj);
+  const teamTwoObj = JSON.stringify(twoForSql);
+  console.log(teamTwoObj);
 
-//   const teamInfo = {
-//     rosterName: rosterTitle,
-//     team1: teamOneObj,
-//     team2: teamTwoObj,
-//     freeAgent: freeForSql,
-//   };
+  const teamInfo = {
+    rosterName: rosterTitle,
+    team1: teamOneObj,
+    team2: teamTwoObj,
+    freeAgent: freeForSql,
+  };
 
-//   $.ajax("/api/teams", {
-//     type: "POST",
-//     data: teamInfo,
-//   }).then(function () {
-//     console.log("teams saved!");
-//   });
+  $.ajax("/api/teams", {
+    type: "POST",
+    data: teamInfo,
+  }).then(function () {
+    console.log("teams saved!");
+  });
 
-//   // hitting save also creates a button with the roster name.
-//   cage.push($("#roster-name").val().trim());
+  // hitting save also creates a button with the roster name.
+  // cage.push($("#roster-name").val().trim());
 
-//   buttonNames();
+  // buttonNames();
 
-//   $("#roster-name").val("");
-//   rosterTitle = [];
-//   console.log(rosterTitle);
-// });
+  $("#roster-name").val("");
+  rosterTitle = [];
+  console.log(rosterTitle);
+});
 
 // function buttonNames() {
-//   $("#button-row").text("");
+//   // $("#button-row").text("");
+//   $("#teamlist").text("");
 
 //   for (i = 0; i < cage.length; i++) {
 //     let btnBtn = $("<button>");
@@ -199,7 +200,8 @@ let cage = [];
 //     });
 //     btnBtn.addClass("grab-rostername");
 
-//     $("#button-row").append(btnBtn);
+//     $("#teamlist").append(btnBtn);
+//     // $("#button-row").append(btnBtn);
 //   }
 // }
 
@@ -258,6 +260,9 @@ let cage = [];
 //   });
 // });
 
+
+
+// this code clears all players and teams; resets team builder
 $("#anew").click(function (event) {
   event.preventDefault();
 
