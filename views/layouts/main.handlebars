@@ -43,35 +43,50 @@
 
   <body id="soccerball">
 
-    <nav class="navbar navbar-light bg-light">
+    {{! <nav class="navbar navbar-light bg-light">
       <div class="container-fluid">
         <span class="navbar-brand mx-auto mb-0 h1 fbmanage">
           <i class="fas fa-futbol fa-sm" style="color:black;"></i>
           FOOTBALL MANAGER
         </span>
       </div>
+    </nav> }}
+
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light navbar-custom">
+      <div class="container-fluid">
+
+        <span class="navbar-brand mx-auto mb-0 h1 fbmanage">
+          <i class="fas fa-futbol fa-sm" style="color:black;"></i>
+          FOOTBALL MANAGER
+        </span>
+
+        {{! <i class="fas fa-futbol fa-2x" style="color:black;"></i> }}
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+
+          <i class="fas fa-bars fa-lg"></i>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            <a class="navbar-brand" href="/roster">ROSTER</a>
+            <a class="navbar-brand" href="/viewteams">VIEW TEAMS</a>
+            {{! <a class="navbar-brand" href="/score">SCORE</a> 
+    <a class="navbar-brand" href="/home">HOME</a> 
+    <a class="navbar-brand" href="/thankyou">EXIT</a>  }}
+          </ul>
+        </div>
+      </div>
+
     </nav>
-
-    {{! <nav class="navbar fixed-top navbar-expand-lg navbar-light navbar-custom"> }}
-
-    {{! <i class="fas fa-futbol fa-2x" style="color:black;"></i> }}
-
-    {{! <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> }}
-
-    {{! <i class="fas fa-bars fa-lg"></i> }}
-    {{! </button> }}
-
-    {{! <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ml-auto"> }}
-    {{! <a class="navbar-brand" href="/roster">ROSTER</a> }}
-    {{! <a class="navbar-brand" href="/score">SCORE</a> }}
-    {{! <a class="navbar-brand" href="/home">HOME</a> }}
-    {{! <a class="navbar-brand" href="/thankyou">EXIT</a> }}
-    {{! </ul>
-        </div> }}
-
-    {{! </nav> }}
 
     {{! <div class="colorstripA"></div>
     <div class="colorstripB"></div>
@@ -79,20 +94,6 @@
     <div class="colorstripD"></div> }}
 
     {{{body}}}
-
-    {{!-- <script src="anime.min.js"></script>
-    <script>
-
-        anime({
-
-            targets: '.fbmanage',
-            translateX: 250
-
-        })
-
-
-    </script> --}}
-
 
     <script
       src="https://code.jquery.com/jquery-3.5.1.js"

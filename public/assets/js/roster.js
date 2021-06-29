@@ -270,7 +270,7 @@ $("#anew").click(function (event) {
   $("#loneplayer").text("");
   $(".content1").hide();
   $("#player-count").hide();
-$("#numplayers").hide();
-$("#title").hide();
-$("#randomteams").hide();
+  $("#numplayers").hide();
+  $("#title").hide();
+  $("#randomteams").hide();
 });
