@@ -29,6 +29,9 @@ router.get("/", function (req, res) {
   res.render("roster");
 });
 
+router.get("/savedteams", function (req, res) {
+  res.render("savedteams");
+});
 // router.get("/welcome", function (req, res) {
 //   res.render("login");
 // });
