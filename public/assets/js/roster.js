@@ -4,12 +4,14 @@ let oneForSql = [];
 let twoForSql = [];
 let freeForSql = [];
 let rosterTitle = [];
+let cage = [];
 $(".content1").hide();
 $(".content2").hide();
 $("#player-count").hide();
 $("#numplayers").hide();
 $("#title").hide();
 $("#randomteams").hide();
+$("#teamssaved").hide();
 manyPlayers();
 
 $("#roster-form").submit(function (event) {
@@ -20,6 +22,7 @@ $("#roster-form").submit(function (event) {
   $("#numplayers").show();
   $("#title").show();
   $("#randomteams").show();
+
 
   let rosterText = $("#roster-creation").val().trim().toLowerCase();
 
@@ -132,7 +135,7 @@ $("#randomteams").click(function () {
   localStorage.setItem("bTeam", JSON.stringify(bTeam));
 });
 
-let cage = [];
+
 
 // Send POST request to save teams in MySQL database
 $("#roster-name").keypress(function (event) {
@@ -172,7 +175,7 @@ $("#saveteams").click(function (event) {
   });
 
   // hitting save also creates a button with the roster name.
-  // cage.push($("#roster-name").val().trim());
+  cage.push($("#roster-name").val().trim());
 
   // buttonNames();
 
@@ -181,84 +184,113 @@ $("#saveteams").click(function (event) {
   console.log(rosterTitle);
 });
 
-// function buttonNames() {
-//   // $("#button-row").text("");
-//   $("#teamlist").text("");
 
-//   for (i = 0; i < cage.length; i++) {
-//     let btnBtn = $("<button>");
-//     btnBtn.text(cage[i]);
-//     btnBtn.attr("data-index", cage[i]);
-//     btnBtn.css({
-//       color: "white",
-//       "text-align": "center",
-//       "background-color": "#BB090F",
-//       padding: "10px",
-//       "padding-left": "15px",
-//       "border-style": "solid",
-//       "border-width": "thin",
-//     });
-//     btnBtn.addClass("grab-rostername");
+$(".savedteams").click(function(){
 
-//     $("#teamlist").append(btnBtn);
-//     // $("#button-row").append(btnBtn);
-//   }
-// }
+
+  $(".rostergenerator").hide();
+
+  $("#teamssaved").show();
+  
+  buttonNames();
+
+
+  console.log("single page application!");
+}); 
+
+function buttonNames() {
+  // $("#button-row").text("");
+  // $("#teamlist").text("");
+
+  console.log(cage);
+
+  for (i = 0; i < cage.length; i++) {
+    let btnBtn = $("<button>");
+    btnBtn.text(cage[i]);
+    btnBtn.attr("data-index", cage[i]);
+    btnBtn.css({
+      color: "white",
+      "text-align": "center",
+      "background-color": "#BB090F",
+      padding: "10px",
+      "padding-left": "15px",
+      "border-style": "solid",
+      "border-width": "thin",
+    });
+    btnBtn.addClass("grab-rostername");
+
+    $("#teamlist").append(btnBtn);
+    // $("#button-row").append(btnBtn);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // // Clicking on roster buttons, GET request, to retrieve rosters and populate fields
 
-// let package = [];
+let package = [];
 
-// $("#button-row").on("click", ".grab-rostername", function (event) {
-//   event.preventDefault();
-//   rosterField = [];
+$("#teamlist").on("click", ".grab-rostername", function (event) {
+  event.preventDefault();
+  rosterField = [];
 
-//   let clickRoster = $(this).attr("data-index");
-//   console.log(clickRoster);
+  let clickRoster = $(this).attr("data-index");
+  console.log(clickRoster);
 
-//   const nameQuery = clickRoster;
-//   console.log(nameQuery);
+  const nameQuery = clickRoster;
+  console.log(nameQuery);
 
 //   // want to be able to grab name from button, and use that to retrieve roster from database
 
-//   $.ajax("/api/teams/" + nameQuery, {
-//     type: "GET",
-//   }).then(function (result) {
-//     console.log(JSON.parse(result[0].Team_1));
+  $.ajax("/api/teams/" + nameQuery, {
+    type: "GET",
+  }).then(function (result) {
+    console.log(JSON.parse(result[0].Team_1));
 
-//     const firstTeam = JSON.parse(result[0].Team_1);
-//     const secondTeam = JSON.parse(result[0].Team_2);
+    const firstTeam = JSON.parse(result[0].Team_1);
+    const secondTeam = JSON.parse(result[0].Team_2);
 
-//     const lonePlayer = result[0].Free_Agent;
-//     result[0].Roster_name;
+    const lonePlayer = result[0].Free_Agent;
+    result[0].Roster_name;
 
-//     $("#teamone-list").text("");
-//     $("#teamtwo-list").text("");
-//     $("#loneplayer").text("");
+    $("#teamone-list").text("");
+    $("#teamtwo-list").text("");
+    $("#loneplayer").text("");
 
-//     $(".content1").show();
+    $(".content1").show();
 
-//     console.log(firstTeam);
+    console.log(firstTeam);
 
-//     for (i = 0; i < firstTeam.length; i++) {
-//       let player = firstTeam[i];
-//       let newLi = $("<li>");
-//       newLi.text(player);
-//       $("#teamone-list").append(newLi);
-//       $("#roster-list").text("");
-//     }
+    for (i = 0; i < firstTeam.length; i++) {
+      let player = firstTeam[i];
+      let newLi = $("<li>");
+      newLi.text(player);
+      $("#teamone-list").append(newLi);
+      $("#roster-list").text("");
+    }
 
-//     for (i = 0; i < secondTeam.length; i++) {
-//       let player = secondTeam[i];
-//       let newLi = $("<li>");
-//       newLi.text(player);
-//       $("#teamtwo-list").append(newLi);
-//       $("#roster-list").text("");
-//     }
+    for (i = 0; i < secondTeam.length; i++) {
+      let player = secondTeam[i];
+      let newLi = $("<li>");
+      newLi.text(player);
+      $("#teamtwo-list").append(newLi);
+      $("#roster-list").text("");
+    }
 
-//     $("#loneplayer").append(lonePlayer);
-//   });
-// });
+    $("#loneplayer").append(lonePlayer);
+  });
+});
 
 
 
@@ -274,8 +306,12 @@ $("#anew").click(function (event) {
   $("#teamtwo-list").text("");
   $("#loneplayer").text("");
   $(".content1").hide();
+  $(".content2").hide();
   $("#player-count").hide();
   $("#numplayers").hide();
   $("#title").hide();
   $("#randomteams").hide();
+
 });
+
+

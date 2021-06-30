@@ -4,7 +4,14 @@ body {
 
 }
 
+.savedteams{
 
+  cursor: pointer;
+}
+.homeroster{
+
+  cursor: pointer;
+}
 
 #Footballmanager {
 

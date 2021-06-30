@@ -33,43 +33,42 @@ function buttonNames() {
     }
   }
 
-  //   // want to be able to grab name from button, and use that to retrieve roster from database
+  //   retrieve rosternames & teams from database and then create buttons for them
 
-//   $.ajax("/api/teams/" + nameQuery, {
-//     type: "GET",
-//   }).then(function (result) {
-//     console.log(JSON.parse(result[0].Team_1));
+  $.ajax("/api/teams/" + nameQuery, {
+    type: "GET",
+  }).then(function (result) {
+    console.log(JSON.parse(result[0].Team_1));
 
-//     const firstTeam = JSON.parse(result[0].Team_1);
-//     const secondTeam = JSON.parse(result[0].Team_2);
+    const firstTeam = JSON.parse(result[0].Team_1);
+    const secondTeam = JSON.parse(result[0].Team_2);
 
-//     const lonePlayer = result[0].Free_Agent;
-//     result[0].Roster_name;
+    const lonePlayer = result[0].Free_Agent;
+    result[0].Roster_name;
 
-//     $("#teamone-list").text("");
-//     $("#teamtwo-list").text("");
-//     $("#loneplayer").text("");
+    $("#teamone-list").text("");
+    $("#teamtwo-list").text("");
+    $("#loneplayer").text("");
 
-//     $(".content1").show();
+    $(".content1").show();
 
-//     console.log(firstTeam);
+    console.log(firstTeam);
 
-//     for (i = 0; i < firstTeam.length; i++) {
-//       let player = firstTeam[i];
-//       let newLi = $("<li>");
-//       newLi.text(player);
-//       $("#teamone-list").append(newLi);
-//       $("#roster-list").text("");
-//     }
+    for (i = 0; i < firstTeam.length; i++) {
+      let player = firstTeam[i];
+      let newLi = $("<li>");
+      newLi.text(player);
+      $("#teamone-list").append(newLi);
+      $("#roster-list").text("");
+    }
 
-//     for (i = 0; i < secondTeam.length; i++) {
-//       let player = secondTeam[i];
-//       let newLi = $("<li>");
-//       newLi.text(player);
-//       $("#teamtwo-list").append(newLi);
-//       $("#roster-list").text("");
-//     }
+    for (i = 0; i < secondTeam.length; i++) {
+      let player = secondTeam[i];
+      let newLi = $("<li>");
+      newLi.text(player);
+      $("#teamtwo-list").append(newLi);
+      $("#roster-list").text("");
+    }
 
-//     $("#loneplayer").append(lonePlayer);
-//   });
-// });
+    $("#loneplayer").append(lonePlayer);
+  });

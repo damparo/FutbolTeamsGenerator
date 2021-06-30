@@ -66,14 +66,14 @@ router.post("/api/teams", function (req, res) {
   );
 });
 
-// router.get("/api/teams/:Roster_name", function (req, res) {
-//   futbol.recieveData(
-//     ["Team_1", "Team_2", "Free_Agent", "Roster_name", "teams"],
-//     [req.params.Roster_name],
-//     function (result) {
-//       res.json(result);
-//     }
-//   );
-// });
+router.get("/api/teams/:Roster_name", function (req, res) {
+  futbol.recieveData(
+    ["Team_1", "Team_2", "Free_Agent", "Roster_name", "teams"],
+    [req.params.Roster_name],
+    function (result) {
+      res.json(result);
+    }
+  );
+});
 
 module.exports = router;
