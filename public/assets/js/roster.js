@@ -200,7 +200,7 @@ $(".savedteams").click(function(){
 
 function buttonNames() {
   // $("#button-row").text("");
-  // $("#teamlist").text("");
+  $("#teamlist").text("");
 
   console.log(cage);
 
@@ -224,20 +224,7 @@ function buttonNames() {
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-// // Clicking on roster buttons, GET request, to retrieve rosters and populate fields
+// Clicking on roster buttons, GET request, to retrieve rosters and populate fields
 
 let package = [];
 
@@ -268,7 +255,10 @@ $("#teamlist").on("click", ".grab-rostername", function (event) {
     $("#teamtwo-list").text("");
     $("#loneplayer").text("");
 
-    $(".content1").show();
+    $("#teamssaved").hide();
+    $(".rostergenerator").show();
+
+    
 
     console.log(firstTeam);
 
