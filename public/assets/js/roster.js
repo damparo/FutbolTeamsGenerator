@@ -197,6 +197,14 @@ $(".savedteams").click(function(){
 
   console.log("single page application!");
 }); 
+$(".homeroster").click(function(){
+
+
+  $("#teamssaved").hide();
+  $(".rostergenerator").show();
+
+  console.log("create again!");
+}); 
 
 function buttonNames() {
   // $("#button-row").text("");
