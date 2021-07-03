@@ -25,11 +25,11 @@ body {
   margin-top: 12vh;
 }
 
-@media screen and (max-width: 450px) {
+/* @media screen and (max-width: 450px) {
   .container {
-    margin-top: 6vh;
+    margin-top: 12vh;
   }
-}
+} */
 
 
 
@@ -197,4 +197,11 @@ margin-top: 5vh;
   #levelteams {
     margin-top: 0;
   }
+}
+
+#teamlist {
+
+  list-style-type: none;
+  padding-left: 0px;
+
 }

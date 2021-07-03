@@ -23,7 +23,6 @@ $("#roster-form").submit(function (event) {
   $("#title").show();
   $("#randomteams").show();
 
-
   let rosterText = $("#roster-creation").val().trim().toLowerCase();
 
   rosterText.charAt(0).toUpperCase();
@@ -135,8 +134,6 @@ $("#randomteams").click(function () {
   localStorage.setItem("bTeam", JSON.stringify(bTeam));
 });
 
-
-
 // Send POST request to save teams in MySQL database
 $("#roster-name").keypress(function (event) {
   if (event.which == "13") {
@@ -184,56 +181,33 @@ $("#saveteams").click(function (event) {
   console.log(rosterTitle);
 });
 
-
-$(".navbar-toggler").click(function(){
-
+// added a collapse on the toggler since it wouldn't collapse on its own - navbar now works as part of a single page application
+$(".navbar-toggler").click(function () {
   $(".collapse").show();
+});
 
-  // if (event.target.matches(".savedteams")){
-
-  // $(".collapse").hide();
-  // $(".rostergenerator").hide();
-  // $("#teamssaved").show();
-  // buttonNames();
-  // console.log("single page application!");
-  // } 
-  // else if (event.target.matches(".homeroster")){
-  // $(".collapse").hide();
-  // $("#teamssaved").hide();
-  // $(".rostergenerator").show();
-  // console.log("create again!");
-
-  // }
-
-
-})
-
-
-$(".savedteams").click(function(){
-
-
+// added functionality to navbar selection
+$(".savedteams").click(function () {
   $(".collapse").hide();
 
   $(".rostergenerator").hide();
 
   $("#teamssaved").show();
-  
+
   buttonNames();
 
- 
-
   console.log("single page application!");
-}); 
+});
 
-$(".homeroster").click(function(){
-
+// added functionality to navbar selection
+$(".homeroster").click(function () {
   $(".collapse").hide();
 
   $("#teamssaved").hide();
   $(".rostergenerator").show();
 
   console.log("create again!");
-}); 
+});
 
 function buttonNames() {
   // $("#button-row").text("");
@@ -242,7 +216,8 @@ function buttonNames() {
   console.log(cage);
 
   for (i = 0; i < cage.length; i++) {
-    let btnBtn = $("<button>");
+    // let newLi = document.createElement("li");
+    let btnBtn = $("<li>");
     btnBtn.text(cage[i]);
     btnBtn.attr("data-index", cage[i]);
     btnBtn.css({
@@ -250,12 +225,14 @@ function buttonNames() {
       "text-align": "center",
       "background-color": "#BB090F",
       padding: "10px",
-      "padding-left": "15px",
       "border-style": "solid",
       "border-width": "thin",
+      cursor: "pointer",
+      "margin-bottom" : "15px",
     });
     btnBtn.addClass("grab-rostername");
 
+    // newLi.append(btnBtn);
     $("#teamlist").append(btnBtn);
     // $("#button-row").append(btnBtn);
   }
@@ -275,7 +252,7 @@ $("#teamlist").on("click", ".grab-rostername", function (event) {
   const nameQuery = clickRoster;
   console.log(nameQuery);
 
-//   // want to be able to grab name from button, and use that to retrieve roster from database
+  //   // want to be able to grab name from button, and use that to retrieve roster from database
 
   $.ajax("/api/teams/" + nameQuery, {
     type: "GET",
@@ -294,8 +271,6 @@ $("#teamlist").on("click", ".grab-rostername", function (event) {
 
     $("#teamssaved").hide();
     $(".rostergenerator").show();
-
-    
 
     console.log(firstTeam);
 
@@ -319,8 +294,6 @@ $("#teamlist").on("click", ".grab-rostername", function (event) {
   });
 });
 
-
-
 // this code clears all players and teams; resets team builder
 $("#anew").click(function (event) {
   event.preventDefault();
@@ -338,7 +311,4 @@ $("#anew").click(function (event) {
   $("#numplayers").hide();
   $("#title").hide();
   $("#randomteams").hide();
-
 });
-
-
