@@ -185,8 +185,34 @@ $("#saveteams").click(function (event) {
 });
 
 
+$(".navbar-toggler").click(function(){
+
+  $(".collapse").show();
+
+  // if (event.target.matches(".savedteams")){
+
+  // $(".collapse").hide();
+  // $(".rostergenerator").hide();
+  // $("#teamssaved").show();
+  // buttonNames();
+  // console.log("single page application!");
+  // } 
+  // else if (event.target.matches(".homeroster")){
+  // $(".collapse").hide();
+  // $("#teamssaved").hide();
+  // $(".rostergenerator").show();
+  // console.log("create again!");
+
+  // }
+
+
+})
+
+
 $(".savedteams").click(function(){
 
+
+  $(".collapse").hide();
 
   $(".rostergenerator").hide();
 
@@ -194,11 +220,14 @@ $(".savedteams").click(function(){
   
   buttonNames();
 
+ 
 
   console.log("single page application!");
 }); 
+
 $(".homeroster").click(function(){
 
+  $(".collapse").hide();
 
   $("#teamssaved").hide();
   $(".rostergenerator").show();
