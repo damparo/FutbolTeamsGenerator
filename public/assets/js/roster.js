@@ -249,19 +249,20 @@ function buttonNames() {
     $("#teamlist").append(btnBtn);
     // $("#button-row").append(btnBtn);
 
-    $("#teamlist").click(function (event) {
-      let element = event.target;
-      if (element.matches(".deleteme") === true) {
-        let index = element.parentElement.getAttribute("data-index");
-        cage.splice(index, 1);
-  
-  console.log("Elder Island");
-      }
-    });
-
+    
   }
 }
 
+$("#teamlist").click(function (event) {
+  let element = event.target;
+  if (element.matches(".deleteme") === true) {
+    let index = element.parentElement.getAttribute("data-index");
+    cage.splice(index, 1);
+    buttonNames();
+// add the delete route here ------------this is where I'll pick it up !!!!!
+console.log("Elder Island");
+  }
+});
 // Clicking on roster buttons, GET request, to retrieve rosters and populate fields
 
 let package = [];
