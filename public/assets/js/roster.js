@@ -236,7 +236,7 @@ function buttonNames() {
    
 
     let deleteBtn = $("<button>");
-    deleteBtn.addClass("btn");
+    deleteBtn.addClass("deleteme");
     deleteBtn.text("X");
     deleteBtn.css({color: "red", "background-color": "white", float: "right" });
     btnBtn.append(deleteBtn);
