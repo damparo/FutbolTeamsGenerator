@@ -224,13 +224,22 @@ function buttonNames() {
       color: "white",
       "text-align": "center",
       "background-color": "#BB090F",
-      padding: "10px",
+      padding: "5px",
       "border-style": "solid",
       "border-width": "thin",
       cursor: "pointer",
-      "margin-bottom" : "15px",
+      height : "50px",
+      "font-size": "20px",
+
     });
     btnBtn.addClass("grab-rostername");
+   
+
+    let deleteBtn = $("<button>");
+    deleteBtn.addClass("btn");
+    deleteBtn.text("X");
+    deleteBtn.css({color: "red", "background-color": "white", float: "right" });
+    btnBtn.append(deleteBtn);
 
     // newLi.append(btnBtn);
     $("#teamlist").append(btnBtn);
