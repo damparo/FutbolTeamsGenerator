@@ -193,9 +193,10 @@ $(".savedteams").click(function () {
   $(".rostergenerator").hide();
 
   $("#teamssaved").show();
-
+  
   buttonNames();
-
+  
+ 
   console.log("single page application!");
 });
 
@@ -208,6 +209,9 @@ $(".homeroster").click(function () {
 
   console.log("create again!");
 });
+
+
+
 
 function buttonNames() {
   // $("#button-row").text("");
@@ -244,6 +248,17 @@ function buttonNames() {
     // newLi.append(btnBtn);
     $("#teamlist").append(btnBtn);
     // $("#button-row").append(btnBtn);
+
+    $("#teamlist").click(function (event) {
+      let element = event.target;
+      if (element.matches(".deleteme") === true) {
+        let index = element.parentElement.getAttribute("data-index");
+        cage.splice(index, 1);
+  
+  console.log("Elder Island");
+      }
+    });
+
   }
 }
 
