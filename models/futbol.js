@@ -12,6 +12,20 @@ const futbol = {
       cb(res);
     });
   },
+
+  delete: function (vals, cb) {
+
+    orm.delete(vals, cb, function(res){
+      cb(res)
+    });
+
+
+
+
+  }
+
+
+
 };
 
 // Export the database functions for the controller (futbolController.js).

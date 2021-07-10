@@ -259,11 +259,11 @@ $("#teamlist").click(function (event) {
     // let clickRoster = $(this).attr("data-index");
     // console.log(clickRoster);
   
-    const deleteQuery = index;
-    console.log(deleteQuery);
+    const deleteTeamData = index;
+    console.log(deleteTeamData);
 
 
-    $.ajax("/api/teams" + deleteQuery, {
+    $.ajax("/api/teams" + deleteTeamData, {
       type: "DELETE",
     }).then(function () {
       console.log("roster & teams deleted!");
