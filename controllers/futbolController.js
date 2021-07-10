@@ -84,13 +84,15 @@ router.delete("/api/teams/:deleteTeamData", function (req, res) {
   futbol.delete(
     deleteTeamData,
     function(result){
-      if (result.affectedRows == 0) {
-        // If no rows were changed, then the ID must not exist, so 404
-        return res.status(404).end();
-      } else {
-        res.status(200).end();
-        // res.json(result);
-      }
+
+      console.log(result)
+      // if (result.affectedRows !== deleteTeamData) {
+      //   // If no rows were changed, then the ID must not exist, so 404
+      //   return res.status(404).end();
+      // } else {
+      //   res.status(200).end();
+      //   // res.json(result);
+      // }
     }
   );
 

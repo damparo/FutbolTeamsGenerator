@@ -263,7 +263,7 @@ $("#teamlist").click(function (event) {
     console.log(deleteTeamData);
 
 
-    $.ajax("/api/teams" + deleteTeamData, {
+    $.ajax("/api/teams/" + deleteTeamData, {
       type: "DELETE",
     }).then(function () {
       console.log("roster & teams deleted!");
@@ -271,7 +271,7 @@ $("#teamlist").click(function (event) {
 
 
 
-    // cage.splice(index, 1);
+    cage.splice(index, 1);
     buttonNames();
 
 
