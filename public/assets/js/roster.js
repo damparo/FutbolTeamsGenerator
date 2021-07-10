@@ -193,10 +193,9 @@ $(".savedteams").click(function () {
   $(".rostergenerator").hide();
 
   $("#teamssaved").show();
-  
+
   buttonNames();
-  
- 
+
   console.log("single page application!");
 });
 
@@ -209,9 +208,6 @@ $(".homeroster").click(function () {
 
   console.log("create again!");
 });
-
-
-
 
 function buttonNames() {
   // $("#button-row").text("");
@@ -232,24 +228,24 @@ function buttonNames() {
       "border-style": "solid",
       "border-width": "thin",
       cursor: "pointer",
-      height : "50px",
+      height: "50px",
       "font-size": "20px",
-
     });
     btnBtn.addClass("grab-rostername");
-   
 
     let deleteBtn = $("<button>");
     deleteBtn.addClass("deleteme");
     deleteBtn.text("X");
-    deleteBtn.css({color: "red", "background-color": "white", float: "right" });
+    deleteBtn.css({
+      color: "red",
+      "background-color": "white",
+      float: "right",
+    });
     btnBtn.append(deleteBtn);
 
     // newLi.append(btnBtn);
     $("#teamlist").append(btnBtn);
     // $("#button-row").append(btnBtn);
-
-    
   }
 }
 
@@ -257,10 +253,29 @@ $("#teamlist").click(function (event) {
   let element = event.target;
   if (element.matches(".deleteme") === true) {
     let index = element.parentElement.getAttribute("data-index");
+
+
+    // add the delete route here ------------this is where I'll pick it up !!!!!
+    // let clickRoster = $(this).attr("data-index");
+    // console.log(clickRoster);
+  
+    const deleteQuery = index;
+    console.log(deleteQuery);
+
+
+    $.ajax("/api/teams" + deleteQuery, {
+      type: "DELETE",
+    }).then(function () {
+      console.log("roster & teams deleted!");
+    });
+
+
+
     cage.splice(index, 1);
     buttonNames();
-// add the delete route here ------------this is where I'll pick it up !!!!!
-console.log("Elder Island");
+
+
+    console.log("Elder Island");
   }
 });
 // Clicking on roster buttons, GET request, to retrieve rosters and populate fields
