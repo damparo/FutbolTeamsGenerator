@@ -271,7 +271,7 @@ $("#teamlist").click(function (event) {
 
 
 
-    cage.splice(index, 1);
+    // cage.splice(index, 1);
     buttonNames();
 
 

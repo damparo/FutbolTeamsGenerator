@@ -14,7 +14,7 @@ const orm = {
   create: function (table, cols, vals, cb) {
     console.log(vals);
 
-    var queryString = "INSERT INTO " + table;
+    let queryString = "INSERT INTO " + table;
 
     queryString += " (";
     queryString += cols.toString();
@@ -38,7 +38,7 @@ const orm = {
   recieveData: function (cols, vals, cb) {
     const nameName = vals.toString();
 
-    var queryString = "SELECT ";
+    let queryString = "SELECT ";
 
     queryString += cols[0].toString() + ",";
     queryString += cols[1].toString() + ",";
@@ -62,6 +62,38 @@ const orm = {
       console.log(result);
     });
   },
+
+  delete: function(vals, cb){
+
+    const whichRow = vals.toString();
+
+    let queryString = "DELETE FROM teams WHERE Roster_name = ";
+    // queryString += whichRow;
+    queryString += "?"
+    // printQuestionMarks(vals.length);
+
+    console.log(queryString);
+
+    connection.query(queryString, whichRow, function (err, result) {
+      if (err) {
+        throw err;
+      }
+
+      cb(result);
+      console.log(result);
+    });
+
+
+
+
+
+
+  }
+
+
+
+
+
 };
 
 // Export the orm object for the model (futbol.js).

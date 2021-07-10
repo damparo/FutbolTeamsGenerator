@@ -76,4 +76,24 @@ router.get("/api/teams/:Roster_name", function (req, res) {
   );
 });
 
+router.delete("/api/teams/:deleteTeamData", function (req, res) {
+
+  const deleteTeamData = req.params.deleteTeamData;
+ 
+
+  futbol.delete(
+    deleteTeamData,
+    function(result){
+      if (result.affectedRows == 0) {
+        // If no rows were changed, then the ID must not exist, so 404
+        return res.status(404).end();
+      } else {
+        res.status(200).end();
+        // res.json(result);
+      }
+    }
+  );
+
+});
+
 module.exports = router;
