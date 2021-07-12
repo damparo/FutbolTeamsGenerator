@@ -72,6 +72,8 @@ function manyPlayers() {
 //following code is to generate teams, sort players into teams and if necessary Free Agent
 
 $("#randomteams").click(function () {
+ 
+  $("#updateteams").hide()
   $(".content1").show();
   $(".content2").show();
   let freeAgent = [];
@@ -332,7 +334,8 @@ $("#teamlist").on("click", ".grab-rostername", function (event) {
 
 
     manyPlayers();
-    
+    $("#saveteams").hide();
+    $("#updateteams").show()
 
 
   });
@@ -349,10 +352,14 @@ $("#anew").click(function (event) {
   $("#teamone-list").text("");
   $("#teamtwo-list").text("");
   $("#loneplayer").text("");
+  $("#roster-name").val("")
   $(".content1").hide();
   $(".content2").hide();
   $("#player-count").hide();
   $("#numplayers").hide();
   $("#title").hide();
   $("#randomteams").hide();
+  $("#saveteams").show();
+  $("#updateteams").show();
+
 });

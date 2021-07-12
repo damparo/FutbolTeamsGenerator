@@ -143,6 +143,22 @@ input[type="text"] {
 
   border: 1.5px solid black;
 }
+#updateteams {
+  display: none;
+  color: white;
+
+  background-color: #30da39;
+
+  width: 60%;
+  margin-left: 20%;
+}
+
+#updateteams:hover {
+  background-color: white;
+  color: black;
+
+  border: 1.5px solid black;
+}
 
 #button-row {
   margin-top: 20px;
