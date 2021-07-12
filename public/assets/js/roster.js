@@ -325,6 +325,12 @@ $("#teamlist").on("click", ".grab-rostername", function (event) {
     rosterField = $.merge(firstTeam, secondTeam)
     rosterField.push(lonePlayer);
     console.log(rosterField);
+
+    $("#roster-name").val(result[0].Roster_name);
+    // rosterTitle = [];
+    // console.log(rosterTitle);
+
+
     manyPlayers();
     
 
