@@ -189,34 +189,24 @@ $(".navbar-toggler").click(function () {
 // added functionality to navbar selection
 $(".savedteams").click(function () {
   $(".collapse").hide();
-
   $(".rostergenerator").hide();
-
   $("#teamssaved").show();
-
   buttonNames();
-
   console.log("single page application!");
 });
 
 // added functionality to navbar selection
 $(".homeroster").click(function () {
   $(".collapse").hide();
-
   $("#teamssaved").hide();
   $(".rostergenerator").show();
-
   console.log("create again!");
 });
 
 function buttonNames() {
-  // $("#button-row").text("");
   $("#teamlist").text("");
-
   console.log(cage);
-
   for (i = 0; i < cage.length; i++) {
-    // let newLi = document.createElement("li");
     let btnBtn = $("<li>");
     btnBtn.text(cage[i]);
     btnBtn.attr("data-index", cage[i]);
@@ -242,10 +232,8 @@ function buttonNames() {
       float: "right",
     });
     btnBtn.append(deleteBtn);
-
-    // newLi.append(btnBtn);
     $("#teamlist").append(btnBtn);
-    // $("#button-row").append(btnBtn);
+  
   }
 }
 
@@ -303,6 +291,7 @@ $("#teamlist").on("click", ".grab-rostername", function (event) {
     const secondTeam = JSON.parse(result[0].Team_2);
 
     const lonePlayer = result[0].Free_Agent;
+    console.log(lonePlayer);
     result[0].Roster_name;
 
     $("#teamone-list").text("");
@@ -331,6 +320,15 @@ $("#teamlist").on("click", ".grab-rostername", function (event) {
     }
 
     $("#loneplayer").append(lonePlayer);
+
+    
+    rosterField = $.merge(firstTeam, secondTeam)
+    rosterField.push(lonePlayer);
+    console.log(rosterField);
+    manyPlayers();
+    
+
+
   });
 });
 
