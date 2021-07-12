@@ -341,6 +341,45 @@ $("#teamlist").on("click", ".grab-rostername", function (event) {
   });
 });
 
+
+// update btn - update roster in database
+$("#updateteams").click(function (event) {
+  event.preventDefault();
+  console.log("update working? yes");
+
+  console.log(oneForSql);
+  console.log(twoForSql);
+  console.log(freeForSql);
+
+  // rosterTitle.push($("#roster-name").val().trim());
+
+  // const teamOneObj = JSON.stringify(oneForSql);
+  // console.log(teamOneObj);
+
+  // const teamTwoObj = JSON.stringify(twoForSql);
+  // console.log(teamTwoObj);
+
+  // const teamInfo = {
+  //   rosterName: rosterTitle,
+  //   team1: teamOneObj,
+  //   team2: teamTwoObj,
+  //   freeAgent: freeForSql,
+  // };
+
+
+
+
+
+  // $.ajax("/api/teams/", {
+  //   type: "PUT",
+  //   data: teamInfo,
+  // }).then(function () {
+  //   console.log("teams updated!");
+  // });
+
+
+});
+
 // this code clears all players and teams; resets team builder
 $("#anew").click(function (event) {
   event.preventDefault();
