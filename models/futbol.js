@@ -19,8 +19,8 @@ const futbol = {
     });
   },
 
-  update: function(cols, vals, updateTeam, cb){
-    orm.update("teams", cols, vals, updateTeam, function(res){
+  update: function(cols, vals, cb){
+    orm.update("teams", cols, vals, function(res){
         cb(res);
     });
 

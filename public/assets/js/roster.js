@@ -346,13 +346,14 @@ $("#teamlist").on("click", ".grab-rostername", function (event) {
 $("#updateteams").click(function (event) {
   event.preventDefault();
   console.log("update working? yes");
-
-  console.log(oneForSql);
-  console.log(twoForSql);
-  console.log(freeForSql);
-  console.log(rosterTitle);
-
+  
+  // console.log(oneForSql);
+  // console.log(twoForSql);
+  // console.log(freeForSql);
+  // console.log(rosterTitle);
+  
   rosterTitle.push($("#roster-name").val().trim());
+  console.log(rosterTitle);
 
   const teamOneObj = JSON.stringify(oneForSql);
   console.log(teamOneObj);

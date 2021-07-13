@@ -83,20 +83,20 @@ const orm = {
     });
   },
 
-  update: function(table, cols, vals, updateTeam, cb) {
-    const updateRow = updateTeam.toString();
+  update: function(table, cols, vals, cb) {
+    const updateRow = vals[3].toString();
 
     let queryString = "UPDATE " + table + " SET ";
-    queryString += cols[0].toString() + " = " + vals[0] + " ";
-    queryString += cols[1].toString() + " = " + vals[1]+ " ";
-    queryString += cols[2].toString() + " = " + vals[2] + " ";
+    queryString += cols[0].toString() + " = " + "?" + ", ";
+    queryString += cols[1].toString() + " = " + "?"+ ", ";
+    queryString += cols[2].toString() + " = " + "?" + " ";
     
     queryString += "WHERE " + "Roster_name = " + "?";
     // queryString += "?";
 
     console.log(queryString);
 
-    connection.query(queryString, updateRow, function (err, result) {
+    connection.query(queryString, [vals[0].toString(), vals[1].toString(), vals[2].toString(), updateRow], function (err, result) {
       if (err) {
         throw err;
       }

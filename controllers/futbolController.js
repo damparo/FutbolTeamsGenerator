@@ -72,16 +72,16 @@ router.put("/api/teams/:Roster_name", function (req, res) {
   
   futbol.update(
 
-    ["Team_1", "Team_2", "Free_Agent"],
+    ["Team_1", "Team_2", "Free_agent"],
     
     [
       [req.body.team1],
       [req.body.team2],
       [req.body.freeAgent],
+      [updateTeamData]
       
     ],
 
-    [updateTeamData],
 
     function (res) {
       console.log(res);
