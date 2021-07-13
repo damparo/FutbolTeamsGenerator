@@ -81,7 +81,7 @@ router.put("/api/teams/:Roster_name", function (req, res) {
       
     ],
 
-    updateTeamData,
+    [updateTeamData],
 
     function (res) {
       console.log(res);

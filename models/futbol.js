@@ -19,16 +19,12 @@ const futbol = {
     });
   },
 
-  update: function(cols, vals, update, cb){
-
-    orm.update("teams", cols, vals, update, cb, function(res){
-
+  update: function(cols, vals, updateTeam, cb){
+    orm.update("teams", cols, vals, updateTeam, function(res){
         cb(res);
-
     });
 
-  
-}
+},
 };
 
 // Export the database functions for the controller (futbolController.js).
