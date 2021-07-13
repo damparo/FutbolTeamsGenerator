@@ -73,7 +73,7 @@ function manyPlayers() {
 
 $("#randomteams").click(function () {
  
-  $("#updateteams").hide()
+  // $("#updateteams").hide()
   $(".content1").show();
   $(".content2").show();
   let freeAgent = [];
@@ -350,32 +350,30 @@ $("#updateteams").click(function (event) {
   console.log(oneForSql);
   console.log(twoForSql);
   console.log(freeForSql);
+  console.log(rosterTitle);
 
-  // rosterTitle.push($("#roster-name").val().trim());
+  rosterTitle.push($("#roster-name").val().trim());
 
-  // const teamOneObj = JSON.stringify(oneForSql);
-  // console.log(teamOneObj);
+  const teamOneObj = JSON.stringify(oneForSql);
+  console.log(teamOneObj);
 
-  // const teamTwoObj = JSON.stringify(twoForSql);
-  // console.log(teamTwoObj);
+  const teamTwoObj = JSON.stringify(twoForSql);
+  console.log(teamTwoObj);
 
-  // const teamInfo = {
-  //   rosterName: rosterTitle,
-  //   team1: teamOneObj,
-  //   team2: teamTwoObj,
-  //   freeAgent: freeForSql,
-  // };
-
-
-
+  const teamInfo = {
+    // rosterName: rosterTitle,
+    team1: teamOneObj,
+    team2: teamTwoObj,
+    freeAgent: freeForSql,
+  };
 
 
-  // $.ajax("/api/teams/", {
-  //   type: "PUT",
-  //   data: teamInfo,
-  // }).then(function () {
-  //   console.log("teams updated!");
-  // });
+  $.ajax("/api/teams/" + rosterTitle, {
+    type: "PUT",
+    data: teamInfo,
+  }).then(function () {
+    console.log("teams updated!");
+  });
 
 
 });

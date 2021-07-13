@@ -66,6 +66,29 @@ router.post("/api/teams", function (req, res) {
   );
 });
 
+router.put("/api/teams/:Roster_name", function (req, res) {
+
+  const updateTeamData = req.params.updateTeamData;
+  
+  futbol.update(
+
+    ["Team_1", "Team_2", "Free_Agent"],
+    
+    [
+      [req.body.team1],
+      [req.body.team2],
+      [req.body.freeAgent],
+      
+    ],
+
+    updateTeamData,
+
+    function (res) {
+      console.log(res);
+    }
+  );
+});
+
 router.get("/api/teams/:Roster_name", function (req, res) {
   futbol.recieveData(
     ["Team_1", "Team_2", "Free_Agent", "Roster_name", "teams"],
@@ -86,13 +109,7 @@ router.delete("/api/teams/:deleteTeamData", function (req, res) {
     function(result){
 
       console.log(result)
-      // if (result.affectedRows !== deleteTeamData) {
-      //   // If no rows were changed, then the ID must not exist, so 404
-      //   return res.status(404).end();
-      // } else {
-      //   res.status(200).end();
-      //   // res.json(result);
-      // }
+      
     }
   );
 

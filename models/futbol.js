@@ -14,18 +14,21 @@ const futbol = {
   },
 
   delete: function (vals, cb) {
+    orm.delete(vals, cb, function (res) {
+      cb(res);
+    });
+  },
 
-    orm.delete(vals, cb, function(res){
-      cb(res)
+  update: function(cols, vals, update, cb){
+
+    orm.update("teams", cols, vals, update, cb, function(res){
+
+        cb(res);
+
     });
 
-
-
-
-  }
-
-
-
+  
+}
 };
 
 // Export the database functions for the controller (futbolController.js).

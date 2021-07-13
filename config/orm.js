@@ -63,13 +63,12 @@ const orm = {
     });
   },
 
-  delete: function(vals, cb){
-
+  delete: function (vals, cb) {
     const whichRow = vals.toString();
 
     let queryString = "DELETE FROM teams WHERE Roster_name = ";
-    // queryString += whichRow;
-    queryString += "?"
+ 
+    queryString += "?";
     // printQuestionMarks(vals.length);
 
     console.log(queryString);
@@ -82,16 +81,29 @@ const orm = {
       cb(result);
       console.log(result);
     });
+  },
 
+  update: function(table, cols, vals, update, cb) {
 
+    let queryString = "UPDATE " + table + " SET ";
+    queryString += cols[0].toString() + " = " + vals[0] + ",";
+    queryString += cols[1].toString() + " = " + vals[1]+ ",";
+    queryString += cols[2].toString() + " = " + vals[2] + ",";
+    
+    queryString += " WHERE " + "Roster_name = " + update;
+    // queryString += "?";
 
+    console.log(queryString);
 
+    connection.query(queryString, update, function (err, result) {
+      if (err) {
+        throw err;
+      }
 
+      cb(result);
+    });
 
   }
-
-
-
 
 
 };
