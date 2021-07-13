@@ -84,7 +84,7 @@ const orm = {
   },
 
   update: function(table, cols, vals, cb) {
-    const updateRow = vals[3].toString();
+    // const updateRow = vals.toString();
 
     let queryString = "UPDATE " + table + " SET ";
     queryString += cols[0].toString() + " = " + "?" + ", ";
@@ -96,7 +96,7 @@ const orm = {
 
     console.log(queryString);
 
-    connection.query(queryString, [vals[0].toString(), vals[1].toString(), vals[2].toString(), updateRow], function (err, result) {
+    connection.query(queryString, vals, function (err, result) {
       if (err) {
         throw err;
       }

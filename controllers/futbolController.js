@@ -68,8 +68,12 @@ router.post("/api/teams", function (req, res) {
 
 router.put("/api/teams/:Roster_name", function (req, res) {
 
-  const updateTeamData = req.params.updateTeamData;
   
+
+  const updateTeamData = req.params.Roster_name;
+  
+
+
   futbol.update(
 
     ["Team_1", "Team_2", "Free_agent"],

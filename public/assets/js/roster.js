@@ -368,6 +368,8 @@ $("#updateteams").click(function (event) {
     freeAgent: freeForSql,
   };
 
+  console.log(teamInfo);
+
 
   $.ajax("/api/teams/" + rosterTitle, {
     type: "PUT",
